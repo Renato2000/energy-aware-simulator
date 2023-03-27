@@ -27,7 +27,48 @@ FifoAlgorithm::FifoAlgorithm(std::shared_ptr<wrench::CloudComputeService> &cloud
  * @return
  */
 std::vector<wrench::WorkflowTask *> FifoAlgorithm::sortTasks(const vector<wrench::WorkflowTask *> &tasks) {
-    return tasks;
+    auto sorted_tasks = tasks;
+
+    // plan tasks depending on cpu usage
+    this->task_to_host_schedule.clear();
+    auto num_cores_host = this->cloud_service->getPerHostNumCores();
+    auto idle_cores_host = this->cloud_service->getPerHostNumIdleCores();
+    std::vector<std::string> scheduled_vms;
+
+    for (auto task : sorted_tasks) {
+        std::string candidate_host;
+
+        // look for existing VMs
+        for (auto &it : this->vm_worker_map) {
+            if ((this->cloud_service->isVMRunning(it.first) &&
+                 this->cloud_service->getVMComputeService(it.first)->getTotalNumIdleCores() > 0) ||
+                this->cloud_service->isVMDown(it.first)) {
+                if (!std::count(scheduled_vms.begin(), scheduled_vms.end(), it.first)) {
+                    scheduled_vms.push_back(it.first);
+                    candidate_host = it.second;
+                    break;
+                }
+            }
+        }
+
+        if (candidate_host.empty()) {
+            unsigned long candidate_host_idle_cores = LONG_MAX;
+            // find candidate host
+            for (auto &it : idle_cores_host) {
+                if (it.second > 0 && it.second < candidate_host_idle_cores) {
+                    candidate_host = it.first;
+                    candidate_host_idle_cores = it.second;
+                }
+            }
+        }
+        if (candidate_host.empty()) {
+            break;
+        }
+        idle_cores_host[candidate_host]--;
+
+        this->task_to_host_schedule.insert(std::pair<wrench::WorkflowTask *, std::string>(task, candidate_host));
+    }
+    return sorted_tasks;
 }
 
 /**
