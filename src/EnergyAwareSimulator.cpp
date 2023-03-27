@@ -169,9 +169,9 @@ int main(int argc, char **argv) {
         total_unpaired_energy += workers_unpaired_power.at(host);
     }
     std::cerr << "Workflow Makespan (s): " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
-    std::cerr << "Total Traditional Energy (Joules): " << total_traditional_energy * 3600 << std::endl;
-    std::cerr << "Total Pairwise Energy (Joules): " << total_pairwise_energy * 3600 << std::endl;
-    std::cerr << "Total Unpaired Energy (Joules): " << total_unpaired_energy * 3600<< std::endl;
+    std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
+    std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
+    std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
     std::cerr << std::endl;
     return 0;
 }
