@@ -1,6 +1,8 @@
 .idea
 cmake-build-debug/
 build/
+.vscode
+temp.json
 
 # Prerequisites
 *.d

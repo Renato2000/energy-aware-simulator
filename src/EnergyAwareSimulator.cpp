@@ -17,6 +17,7 @@
 #include "scheduling_algorithm/IOAwareAlgorithm.h"
 #include "scheduling_algorithm/IOAwareBalanceAlgorithm.h"
 #include "scheduling_algorithm/SPSSEBAlgorithm.h"
+#include "scheduling_algorithm/FifoAlgorithm.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(EnergyAwareSimulator, "Log category for EnergyAwareSimulator");
 
