@@ -85,7 +85,7 @@ std::vector<wrench::WorkflowTask *> IOAwareAlgorithm::sortTasks(const vector<wre
  * @param task
  * @return
  */
-std::string FifoAlgorithm::IOAwareAlgorithm(const wrench::WorkflowTask *task) {
+std::string IOAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
 
     if (this->task_to_host_schedule.find(task) == this->task_to_host_schedule.end()) {
         return "";
