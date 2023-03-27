@@ -56,15 +56,17 @@ std::string EnRealAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
             return "";
         }
         bool turned_on = false;
+        int num_cores = 1;
         for (auto &host : this->cloud_service->getExecutionHosts()) {
             if (!wrench::Simulation::isHostOn(host)) {
                 wrench::Simulation::turnOnHost(host);
+                num_cores = wrench::Simulation::getHostNumCores(host);
                 turned_on = true;
                 break;
             }
         }
         if (turned_on) {
-            vm_name = this->cloud_service->createVM(1, 1000000000);
+            vm_name = this->cloud_service->createVM(num_cores, 1000000000);
         }
     }
 

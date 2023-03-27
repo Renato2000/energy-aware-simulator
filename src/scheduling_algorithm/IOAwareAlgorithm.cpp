@@ -85,13 +85,14 @@ std::vector<wrench::WorkflowTask *> IOAwareAlgorithm::sortTasks(const vector<wre
  * @param task
  * @return
  */
-std::string IOAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
+std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
 
     if (this->task_to_host_schedule.find(task) == this->task_to_host_schedule.end()) {
         return "";
     }
 
     auto host = this->task_to_host_schedule.at(task);
+    int num_cores = wrench::Simulation::getHostNumCores(host)
     if (!wrench::Simulation::isHostOn(host)) {
         wrench::Simulation::turnOnHost(host);
     }
@@ -121,7 +122,7 @@ std::string IOAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
         if (this->cloud_service->getPerHostNumIdleCores().at(host) == 0) {
             return "";
         }
-        vm_name = this->cloud_service->createVM(1, 1000000000);
+        vm_name = this->cloud_service->createVM(num_cores, 1000000000);
     }
 
     // start VM
