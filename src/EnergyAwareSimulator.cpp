@@ -93,6 +93,19 @@ int main(int argc, char **argv) {
         simulation.stageFile(file, storage_service);
     }
 
+
+    /*
+    for(auto &host : hosts) {
+        wrench::S4U_Simulation::setPstate(host, 1);
+        std::vector<int> pstates = wrench::S4U_Simulation::getListOfPstates(host);
+        cout << "List of pstates for host \"" << host << "\": ";
+        for(auto pstate : pstates) {
+            cout << pstate << " ";
+        }
+        cout << "\n";
+    }
+    */
+
     // simulation execution
     WRENCH_INFO("Launching the Simulation...");
     try {
