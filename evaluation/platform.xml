@@ -38,14 +38,6 @@
                 <prop id="mount" value="/"/>
             </disk>
         </host>
-        <host id="worker4" speed="1f" core="12">
-            <prop id="wattage_per_state" value="98.080000:112.727273:200.000000" />
-            <prop id="watt_off" value="10" />
-            <disk id="hard_drive" read_bw="100MBps" write_bw="100MBps">
-                <prop id="size" value="5000GiB"/>
-                <prop id="mount" value="/"/>
-            </disk>
-        </host>
         <link id="1" bandwidth="1.24GBps" latency="100us"/>
         <link id="2" bandwidth="55MBps" latency="100us"/>
         <route src="master" dst="worker1">
