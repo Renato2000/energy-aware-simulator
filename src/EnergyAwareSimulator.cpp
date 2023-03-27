@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 
     // compute services
     std::set<std::shared_ptr<wrench::ComputeService>> compute_services;
-    std::vector<std::string> hosts{"worker1", "worker2", "worker3", "worker4"};
+    std::vector<std::string> hosts{"worker1", "worker2", "worker3"};
     auto cloud_service = simulation.add(new wrench::CloudComputeService(wms_host, hosts, {"/"}, {}, {
             {wrench::CloudComputeServiceMessagePayload::START_VM_REQUEST_MESSAGE_PAYLOAD,    1024},
             {wrench::CloudComputeServiceMessagePayload::SHUTDOWN_VM_REQUEST_MESSAGE_PAYLOAD, 1024},
