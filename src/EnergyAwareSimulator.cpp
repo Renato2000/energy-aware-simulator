@@ -172,6 +172,5 @@ int main(int argc, char **argv) {
     std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
     std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
     std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
-    std::cerr << std::endl;
     return 0;
 }
