@@ -99,7 +99,6 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         try {
 			if (vm_cs->getTotalNumCores() == vm_cs->getTotalNumIdleCores()) {
 				auto vm_pm = cloud_service->getVMPhysicalHostname(it->second);
-                std::cout << "Shutting down VM: " << it->second << std::endl;
 				cloud_service->shutdownVM(it->second);
 				this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
 			}
