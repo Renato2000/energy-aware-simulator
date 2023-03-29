@@ -80,7 +80,8 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     }
 
     // start VM
-    auto vm_cs = cloud_service->getVMComputeService(vm_name);
+    auto it = this->tasks_vm_map.find(task);
+    auto vm_cs = cloud_service->getVMComputeService(it->second);
     std::cout << "Starting VM " << vm_name << " which has " << vm_cs->getTotalNumIdleCores() << " idle cores" << std::endl;
     this->cloud_service->startVM(vm_name);
     auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
