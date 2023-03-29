@@ -72,10 +72,8 @@ std::string SPSSEBAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
 
     // if there is no cores available on running hosts, turn on another host
     bool has_idle_host = false;
-    int num_cores = 1;
     for (auto &it : this->worker_running_vms) {
         if (wrench::Simulation::isHostOn(it.first) && it.second < wrench::Simulation::getHostNumCores(it.first)) {
-            num_cores = wrench::Simulation::getHostNumCores(it.first);
             has_idle_host = true;
             break;
         }
@@ -84,7 +82,6 @@ std::string SPSSEBAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
         for (auto &host : this->cloud_service->getExecutionHosts()) {
             if (!wrench::Simulation::isHostOn(host)) {
                 wrench::Simulation::turnOnHost(host);
-                num_cores = wrench::Simulation::getHostNumCores(host);
                 break;
             }
         }
@@ -113,7 +110,7 @@ std::string SPSSEBAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     // if task cannot start now on a running VM, it will start a new VM if possible
     if (vm_name.empty() && this->cloud_service->getTotalNumIdleCores() > 0) {
 
-        vm_name = this->cloud_service->createVM(num_cores, 1000000000);
+        vm_name = this->cloud_service->createVM(1, 1000000000);
         this->cloud_service->startVM(vm_name);
         this->vms_pool.insert(vm_name);
 
