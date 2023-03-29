@@ -92,7 +92,7 @@ std::string IOAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     }
 
     auto host = this->task_to_host_schedule.at(task);
-    int num_cores = wrench::Simulation::getHostNumCores(host)
+    int num_cores = wrench::Simulation::getHostNumCores(host);
     if (!wrench::Simulation::isHostOn(host)) {
         wrench::Simulation::turnOnHost(host);
     }
