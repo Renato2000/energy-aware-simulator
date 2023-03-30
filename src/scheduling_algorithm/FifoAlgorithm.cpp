@@ -18,18 +18,7 @@ FifoAlgorithm::FifoAlgorithm(std::shared_ptr<wrench::CloudComputeService> &cloud
  * @return
  */
 std::vector<wrench::WorkflowTask *> FifoAlgorithm::sortTasks(const vector<wrench::WorkflowTask *> &tasks) {
-    auto sorted_tasks = tasks;
-
-    std::sort(sorted_tasks.begin(), sorted_tasks.end(),
-              [](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
-                  if (t1->getFlops() == t2->getFlops()) {
-                      return ((uintptr_t) t1 < (uintptr_t) t2);
-                  } else {
-                      return (t1->getFlops() > t2->getFlops());
-                  }
-              });
-
-    return sorted_tasks;
+    return tasks;
 }
 
 /**
@@ -38,8 +27,6 @@ std::vector<wrench::WorkflowTask *> FifoAlgorithm::sortTasks(const vector<wrench
  * @return
  */
 std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
-
-    std::cout << "Scheduling a new task" << std::endl;
 
     // find candidate vms
     std::vector<std::string> candidate_vms;
@@ -105,6 +92,7 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
  * @param vm_pm
  */
 void FifoAlgorithm::notifyVMShutdown(const string &vm_name, const string &vm_pm) {
+    this->vm_worker_map.erase(vm_name);
     this->worker_running_vms.at(vm_pm)--;
     if (this->worker_running_vms.at(vm_pm) == 0) {
         wrench::Simulation::turnOffHost(vm_pm);
