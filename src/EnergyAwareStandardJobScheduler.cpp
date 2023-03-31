@@ -93,6 +93,7 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
     if (this->unscheduled_tasks > 0) {
         this->unscheduled_tasks--;
     } else {
+        /*
         auto it = this->tasks_vm_map.find(task);
         auto cloud_service = std::dynamic_pointer_cast<wrench::CloudComputeService>(*compute_services.begin());
         auto vm_cs = cloud_service->getVMComputeService(it->second);
@@ -106,5 +107,6 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
 		catch (wrench::WorkflowExecutionException &e) {
             // ignore
         }
+        */
     }
 }
