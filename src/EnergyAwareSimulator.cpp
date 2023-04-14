@@ -167,7 +167,7 @@ int main(int argc, char **argv) {
 
     for (auto &host : hosts) {
         total_traditional_energy += workers_traditional_power.at(host);
-        total_pairwise_energy += workers_pairwise_power.at(host);
+        total_pairwise_energy += workers_pairwise_pGower.at(host);
         total_unpaired_energy += workers_unpaired_power.at(host);
     }
     std::cerr << "Workflow Makespan (s): " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
