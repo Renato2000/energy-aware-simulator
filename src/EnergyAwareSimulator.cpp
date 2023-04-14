@@ -174,5 +174,12 @@ int main(int argc, char **argv) {
     std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
     std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
     std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
+   
+    double total_energy = 0;
+    for (auto &host : hosts) {
+        total_energy += simulation.getEnergyConsumed(host)/3600;
+    } 
+    std::cerr << "Total Energy by Wrench (Wh): " << total_energy << std::endl;
+
     return 0;
 }
