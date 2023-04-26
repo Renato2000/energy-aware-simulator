@@ -1,6 +1,9 @@
 #ifndef TASK_H
 #define TASK_H
 
+#include <string>
+#include <list>
+
 class Task {
     public:
         Task(const std::string &name) : name(name) {}
