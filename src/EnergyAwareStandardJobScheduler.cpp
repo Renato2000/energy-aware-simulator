@@ -99,10 +99,10 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         try {
 			if (vm_cs->getTotalNumCores() == vm_cs->getTotalNumIdleCores()) {
 				auto vm_pm = cloud_service->getVMPhysicalHostname(it->second);
-				cloud_service->shutdownVM(it->second);
+				//cloud_service->shutdownVM(it->second);
 				//cloud_service->suspendVM(it->second);
-                std::cout << "Suspending VM" << std::endl;
-                this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
+                //std::cout << "Suspending VM" << std::endl;
+                //this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
 			}
 		}
 		catch (wrench::WorkflowExecutionException &e) {
