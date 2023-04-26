@@ -11,3 +11,7 @@ void Task::add_dependency(Task task) {
 void Task::remove_dependency(Task task) {
     this->dependencies.remove(task);
 }
+
+std::list<Task> const &Task::get_childs() const {
+    return this->childs;
+}
