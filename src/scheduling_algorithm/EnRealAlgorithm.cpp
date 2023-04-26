@@ -27,6 +27,8 @@ EnRealAlgorithm::EnRealAlgorithm(std::shared_ptr<wrench::CloudComputeService> &c
  */
 std::string EnRealAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
 
+    //std::cout << "Scheduling a task with " << task->getFlops() << " flops" << std::endl;
+
 //    auto host = this->task_to_host_schedule.at(task);
 //    if (!wrench::Simulation::isHostOn(host)) {
 //        wrench::Simulation::turnOnHost(host);

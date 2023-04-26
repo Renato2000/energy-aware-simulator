@@ -8,6 +8,6 @@ void Task::add_dependency(Task task) {
     this->dependencies.push_back(task);
 }
 
-void remove_dependency(Task task) {
+void Task::remove_dependency(Task task) {
     this->dependencies.remove(task);
 }

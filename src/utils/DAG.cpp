@@ -10,7 +10,7 @@ void DAG::concludeTask(std::string task_name) {
 
     Task task = this->tasks["task_name"];
 
-    for(auto t : task->childs) {
+    for(auto t : task.childs) {
         t.removeDependency(task);
     }
 }
