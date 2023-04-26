@@ -18,7 +18,18 @@ EnergyAwareAlgorithm::EnergyAwareAlgorithm(std::shared_ptr<wrench::CloudComputeS
  * @return
  */
 std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector<wrench::WorkflowTask *> &tasks) {
-    return tasks;
+    auto sorted_tasks = tasks;
+
+    std::sort(sorted_tasks.begin(), sorted_tasks.end(),
+              [](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
+                  if (t1->getAverageCPU() == t2->getAverageCPU()) {
+                      return ((uintptr_t) t1 < (uintptr_t) t2);
+                  } else {
+                      return (t1->getAverageCPU() > t2->getAverageCPU());
+                  }
+              });
+
+    return sorted_tasks;
 }
 
 /**

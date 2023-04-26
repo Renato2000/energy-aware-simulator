@@ -48,6 +48,10 @@ set(SOURCE_FILES
         src/scheduling_algorithm/SPSSEBAlgorithm.cpp
         src/scheduling_algorithm/FifoAlgorithm.h
         src/scheduling_algorithm/FifoAlgorithm.cpp
+        src/utils/Task.h
+        src/utils/Task.cpp
+        src/utils/DAG.h
+        src/utils/DAG.cpp
         )
 
 set(TEST_FILES
