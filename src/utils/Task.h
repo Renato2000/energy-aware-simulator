@@ -6,6 +6,7 @@
 
 class Task {
     public:
+        Task() {}
         Task(const std::string &name) : name(name) {}
 
         bool operator==(const Task &t) {
@@ -14,8 +15,8 @@ class Task {
 
         void add_child(Task task);
         void add_dependency(Task task);
-        void remove_dependency(Task task);
-        std::list<Task> const &get_childs() const;
+        void remove_dependency(Task &task);
+        std::list<Task> &get_childs();
 
     private:
         std::string name;

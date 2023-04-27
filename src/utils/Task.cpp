@@ -8,10 +8,10 @@ void Task::add_dependency(Task task) {
     this->dependencies.push_back(task);
 }
 
-void Task::remove_dependency(Task task) {
+void Task::remove_dependency(Task &task) {
     this->dependencies.remove(task);
 }
 
-std::list<Task> const &Task::get_childs() const {
+std::list<Task> &Task::get_childs() {
     return this->childs;
 }
