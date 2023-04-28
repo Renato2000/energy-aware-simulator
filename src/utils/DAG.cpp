@@ -1,7 +1,27 @@
 #include "DAG.h"
 
+#include <fstream>
+#include <nlohmann/json.hpp>
+
 DAG::DAG(std::string file_name) {
-    
+    std::ifstream input_file(file_name);
+
+    std::string json_str((std::istreambuf_iterator<char>(input_file)), std::istreambuf_iterator<char>());
+
+    nlohmann::json j = nlohmann::json::parse(json_str);
+
+    auto jobs = j["workflow"]["jobs"];
+
+    for(const auto &job : jobs) {
+        std::string name = job["name"];
+        std::list<std::string> parents = job["parents"];
+        std::cout << "Job name: " << name << std::endl;
+        std::cout << "Parents: ";
+        for (const auto& parent : parents) {
+            std::cout << parent << " ";
+        }
+        std::cout << std::endl;
+    }
 }
 
 void DAG::concludeTask(std::string task_name) {

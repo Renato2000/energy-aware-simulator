@@ -8,11 +8,11 @@
 #include <map>
 
 class DAG {
-public:
-    DAG(std::string file_name);
-    void concludeTask(std::string task); 
-private:
-    std::map<std::string, std::unique_ptr<Task>> tasks;    
+    public:
+        DAG(std::string file_name);
+        void concludeTask(std::string task); 
+    private:
+        std::map<std::string, std::unique_ptr<Task>> tasks;    
 };
 
 #endif
