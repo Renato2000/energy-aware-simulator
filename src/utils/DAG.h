@@ -3,6 +3,7 @@
 
 #include "Task.h"
 
+#include <memory>
 #include <string>
 #include <map>
 
@@ -11,9 +12,7 @@ public:
     DAG(std::string file_name);
     void concludeTask(std::string task); 
 private:
-    std::map<std::string, Task> tasks;    
+    std::map<std::string, std::unique_ptr<Task>> tasks;    
 };
-
-
 
 #endif
