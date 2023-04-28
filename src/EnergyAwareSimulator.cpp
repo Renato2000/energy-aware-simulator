@@ -18,6 +18,9 @@
 #include "scheduling_algorithm/IOAwareBalanceAlgorithm.h"
 #include "scheduling_algorithm/SPSSEBAlgorithm.h"
 #include "scheduling_algorithm/FifoAlgorithm.h"
+#include "scheduling_algorithm/EnergyAwareAlgorithm.h"
+
+#include "utils/DAG.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(EnergyAwareSimulator, "Log category for EnergyAwareSimulator");
 
@@ -38,6 +41,8 @@ int main(int argc, char **argv) {
     //create the platform file and dax file from command line args
     char *platform_file = argv[1];
     char *workflow_file = argv[2];
+
+    std::unique_ptr<DAG> dag = std::make_unique<DAG>(DAG(workflow_file));
 
     // instantiating SimGrid platform
     WRENCH_INFO("Instantiating SimGrid platform from: %s", platform_file);
@@ -76,8 +81,9 @@ int main(int argc, char **argv) {
 //    auto scheduling_algorithm = std::make_unique<SPSSEBAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
-      auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
+//    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
+      auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(dag,
             cloud_service,
             std::make_unique<TraditionalPowerModel>(cloud_service));
 

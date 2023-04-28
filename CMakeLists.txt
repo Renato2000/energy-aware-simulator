@@ -25,37 +25,51 @@ endif ()
 
 include_directories(src/ include/ /usr/local/include /usr/local/include/wrench)
 
+# utils
+set(UTILS
+    src/utils/Task.h
+    src/utils/Task.cpp
+    src/utils/DAG.h
+    src/utils/DAG.cpp
+)
+
+# scheduling algorithms
+set(SCHEDULING_ALGORITHMS
+    ${UTILS}
+    src/scheduling_algorithm/EnRealAlgorithm.h
+    src/scheduling_algorithm/EnRealAlgorithm.cpp
+    src/scheduling_algorithm/IOAwareAlgorithm.h
+    src/scheduling_algorithm/IOAwareAlgorithm.cpp
+    src/scheduling_algorithm/IOAwareBalanceAlgorithm.h
+    src/scheduling_algorithm/IOAwareBalanceAlgorithm.cpp
+    src/scheduling_algorithm/SchedulingAlgorithm.h
+    src/scheduling_algorithm/SPSSEBAlgorithm.h
+    src/scheduling_algorithm/SPSSEBAlgorithm.cpp
+    src/scheduling_algorithm/FifoAlgorithm.h
+    src/scheduling_algorithm/FifoAlgorithm.cpp 
+    src/scheduling_algorithm/EnergyAwareAlgorithm.h
+    src/scheduling_algorithm/EnergyAwareAlgorithm.cpp
+)
+
 # source files
 set(SOURCE_FILES
-        src/EnergyAwareSimulator.cpp
-        src/EnergyAwareStandardJobScheduler.h
-        src/EnergyAwareStandardJobScheduler.cpp
-        src/GreedyWMS.h
-        src/GreedyWMS.cpp
-        src/PowerMeter.h
-        src/PowerMeter.cpp
-        src/cost_model/CostModel.h
-        src/cost_model/TraditionalPowerModel.h
-        src/cost_model/TraditionalPowerModel.cpp
-        src/scheduling_algorithm/EnRealAlgorithm.h
-        src/scheduling_algorithm/EnRealAlgorithm.cpp
-        src/scheduling_algorithm/IOAwareAlgorithm.h
-        src/scheduling_algorithm/IOAwareAlgorithm.cpp
-        src/scheduling_algorithm/IOAwareBalanceAlgorithm.h
-        src/scheduling_algorithm/IOAwareBalanceAlgorithm.cpp
-        src/scheduling_algorithm/SchedulingAlgorithm.h
-        src/scheduling_algorithm/SPSSEBAlgorithm.h
-        src/scheduling_algorithm/SPSSEBAlgorithm.cpp
-        src/scheduling_algorithm/FifoAlgorithm.h
-        src/scheduling_algorithm/FifoAlgorithm.cpp
-        src/utils/Task.h
-        src/utils/Task.cpp
-        src/utils/DAG.h
-        src/utils/DAG.cpp
-        )
+    ${UTILS}
+    ${SCHEDULING_ALGORITHMS}    
+    src/EnergyAwareSimulator.cpp
+    src/EnergyAwareStandardJobScheduler.h
+    src/EnergyAwareStandardJobScheduler.cpp
+    src/GreedyWMS.h
+    src/GreedyWMS.cpp
+    src/PowerMeter.h
+    src/PowerMeter.cpp
+    src/cost_model/CostModel.h
+    src/cost_model/TraditionalPowerModel.h
+    src/cost_model/TraditionalPowerModel.cpp
+)
 
 set(TEST_FILES
-        )
+
+)
 
 # wrench libraries
 find_library(WRENCH_LIBRARY NAMES wrench)
