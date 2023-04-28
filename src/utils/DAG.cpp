@@ -16,10 +16,14 @@ DAG::DAG(std::string file_name) {
     for(const auto &job : jobs) {
         std::string name = job["name"];
         std::list<std::string> parents = job["parents"];
-        float runtime = std::stof(jon["runtime"]);
-        
+        float runtime = job["runtime"];
+       
+        std::unique_ptr<Task> task = std::make_unique<Task>(Task(name, parents, runtime));
+
+        this->tasks.insert(std::make_pair(name, std::move(task)));
+ 
         std::cout << "Job name: " << name << std::endl;
-        std::cout << "Runtime" << runtime << std::endl;
+        std::cout << "Runtime " << runtime << std::endl;
         std::cout << "Num Parents: " << parents.size() << std::endl;
     }
 }
