@@ -7,9 +7,11 @@ WRENCH_LOG_CATEGORY(enegy_aware_algorithm, "Log category for EnergyAwareAlgorith
  * @param cloud_service
  * @param power_model
  */
-EnergyAwareAlgorithm::EnergyAwareAlgorithm(std::shared_ptr<wrench::CloudComputeService> &cloud_service,
-                                   std::unique_ptr<CostModel> cost_model)
-        : SchedulingAlgorithm(cloud_service, std::move(cost_model)) {
+EnergyAwareAlgorithm::EnergyAwareAlgorithm(std::unique_ptr<DAG> &dag,
+                                    std::shared_ptr<wrench::CloudComputeService> &cloud_service,
+                                    std::unique_ptr<CostModel> cost_model)
+        : SchedulingAlgorithm(cloud_service, std::move(cost_model)),
+            dag(std::move(dag)) {
 }
 
 /**

@@ -1,5 +1,6 @@
 #include "DAG.h"
 
+#include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>
 
@@ -15,6 +16,7 @@ DAG::DAG(std::string file_name) {
     for(const auto &job : jobs) {
         std::string name = job["name"];
         std::list<std::string> parents = job["parents"];
+        
         std::cout << "Job name: " << name << std::endl;
         std::cout << "Parents: ";
         for (const auto& parent : parents) {
