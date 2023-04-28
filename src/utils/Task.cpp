@@ -1,17 +1,17 @@
 #include "Task.h"
 
-void Task::add_child(Task task) {
-    this->childs.push_back(task);
+void Task::add_child(std::string task_name) {
+    this->childs.push_back(task_name);
 }
 
-void Task::add_dependency(Task task) {
-    this->dependencies.push_back(task);
+void Task::add_dependency(std::string task_name) {
+    this->dependencies.push_back(task_name);
 }
 
-void remove_dependency(Task task) {
-    this->dependencies.remove(task);
+void Task::remove_dependency(std::string task_name) {
+    this->dependencies.remove(task_name);
 }
 
-std::list<Task> const &Task::get_childs() const {
+const std::list<std::string> &Task::get_childs() {
     return this->childs;
 }
