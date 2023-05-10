@@ -3,11 +3,11 @@
 
 #include "SchedulingAlgorithm.h"
 #include "cost_model/CostModel.h"
-#include "utils/DAG.h"
+#include "utils/ClusterInfo.h"
 
 class EnergyAwareAlgorithm : public SchedulingAlgorithm {
 public:
-    EnergyAwareAlgorithm(std::unique_ptr<DAG> &dag,
+    EnergyAwareAlgorithm(std::shared_ptr<ClusterInfo> cluster_info,
                     std::shared_ptr<wrench::CloudComputeService> &cloud_service,
                     std::unique_ptr<CostModel> cost_model);
 
@@ -17,9 +17,17 @@ public:
 
     void notifyVMShutdown(const std::string &vm_name, const std::string &vm_pm) override;
 
+
 private:
-    std::unique_ptr<DAG> dag;
-    std::set<std::string> vms_pool;
+    std::shared_ptr<ClusterInfo> cluster_info;
+    std::vector<std::string> round_tasks;
+    
+    int getTotalNumberCores(std::vector<std::string> candidate_vms);
+    int getTotalNumberIdleCores(std::vector<std::string> candidate_vms);
+    std::string getBestFit(std::string task, std::vector<std::string> candidate_vms);
+    int getNumberIdleHosts();
+    std::string getIdleHost();
+    bool isIdle(std::string vm);
 };
 
 #endif

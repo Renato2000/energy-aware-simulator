@@ -31,6 +31,12 @@ set(UTILS
     src/utils/Task.cpp
     src/utils/DAG.h
     src/utils/DAG.cpp
+    src/utils/Executor.h
+    src/utils/Executor.cpp
+    src/utils/Executors.h
+    src/utils/Executors.cpp
+    src/utils/ClusterInfo.h
+    src/utils/ClusterInfo.cpp
 )
 
 # scheduling algorithms

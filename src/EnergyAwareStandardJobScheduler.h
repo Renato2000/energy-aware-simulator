@@ -14,11 +14,13 @@
 
 #include "cost_model/CostModel.h"
 #include "scheduling_algorithm/SchedulingAlgorithm.h"
+#include "utils/ClusterInfo.h"
 
 class EnergyAwareStandardJobScheduler : public wrench::StandardJobScheduler {
 public:
     EnergyAwareStandardJobScheduler(std::shared_ptr<wrench::StorageService> storage_service,
-                                    std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm);
+                                    std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm,
+                                    std::shared_ptr<ClusterInfo> cluster_info);
 
     void scheduleTasks(const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
                        const std::vector<wrench::WorkflowTask *> &tasks) override;
@@ -31,6 +33,7 @@ private:
     std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm;
     int unscheduled_tasks;
     std::map<wrench::WorkflowTask *, std::string> tasks_vm_map;
+    std::shared_ptr<ClusterInfo> cluster_info;
 };
 
 #endif //ENERGY_AWARE_ENERGYAWARESTANDARDJOBSCHEDULER_H

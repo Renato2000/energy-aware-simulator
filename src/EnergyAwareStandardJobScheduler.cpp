@@ -20,9 +20,12 @@ WRENCH_LOG_CATEGORY(energy_aware_scheduler, "Log category for EnergyAwareStandar
  */
 EnergyAwareStandardJobScheduler::EnergyAwareStandardJobScheduler(
         std::shared_ptr<wrench::StorageService> storage_service,
-        std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm) :
+        std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm,
+        std::shared_ptr<ClusterInfo> cluster_info) :
         default_storage_service(std::move(storage_service)),
-        scheduling_algorithm(std::move(scheduling_algorithm)) {
+        scheduling_algorithm(std::move(scheduling_algorithm)), 
+        cluster_info(cluster_info) {
+
     this->unscheduled_tasks = 0;
 }
 

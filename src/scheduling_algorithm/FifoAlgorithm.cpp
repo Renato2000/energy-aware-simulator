@@ -39,11 +39,9 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     for (const auto &vm : candidate_vms) {
         if (this->cloud_service->isVMRunning(vm) &&
             this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) {
-            //std::cout << "Found running VM with " << this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() << " idle cores" << std::endl;
             return vm;
         //} else if (this->cloud_service->isVMSuspended(vm) &&
         //    this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) {
-        //    std::cout << "Found suspended VM" << std::endl;
         //    this->cloud_service->resumeVM(vm);
         //    return vm;
         } else if (vm_name.empty() && this->cloud_service->isVMDown(vm)) {
@@ -54,7 +52,6 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     if (vm_name.empty()) {
         // create VM, as no viable VM could be found
         if (this->cloud_service->getTotalNumIdleCores() == 0) {
-            //std::cout << "No available VMs" << std::endl;
             return "";
         }
         bool turned_on = false;
@@ -68,7 +65,6 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
             }
         }
         if (turned_on) {
-            //std::cout << "Creating new VM with " << num_cores << " cores" << std::endl;
             vm_name = this->cloud_service->createVM(num_cores, 1000000000);
         }
     }
@@ -78,9 +74,7 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     }
 
     // start VM
-    //std::cout << "Starting VM" << std::endl;
     this->cloud_service->startVM(vm_name);
-    //std::cout << "Num idle cores: " << this->cloud_service->getVMComputeService(vm_name)->getTotalNumIdleCores() << std::endl;
     auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
 
     if (this->vm_worker_map.find(vm_name) == this->vm_worker_map.end()) {

@@ -42,7 +42,10 @@ int main(int argc, char **argv) {
     char *platform_file = argv[1];
     char *workflow_file = argv[2];
 
+    // instantiating data structures for the scheduling algorithm
     std::unique_ptr<DAG> dag = std::make_unique<DAG>(DAG(workflow_file));
+    std::unique_ptr<Executors> executors = std::make_unique<Executors>(Executors());
+    std::shared_ptr<ClusterInfo> cluster_info = std::make_shared<ClusterInfo>(ClusterInfo(dag, executors));
 
     // instantiating SimGrid platform
     WRENCH_INFO("Instantiating SimGrid platform from: %s", platform_file);
@@ -83,14 +86,14 @@ int main(int argc, char **argv) {
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
-      auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(dag,
+      auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
             cloud_service,
             std::make_unique<TraditionalPowerModel>(cloud_service));
 
     // instantiate the wms
     auto wms = simulation.add(
             new GreedyWMS(std::make_unique<EnergyAwareStandardJobScheduler>(
-                    storage_service, std::move(scheduling_algorithm)),
+                    storage_service, std::move(scheduling_algorithm), cluster_info),
                           compute_services, {storage_service}, wms_host));
 
     wms->addWorkflow(workflow);
