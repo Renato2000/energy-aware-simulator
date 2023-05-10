@@ -1,0 +1,75 @@
+std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
+
+    // find candidate vms
+    std::vector<std::string> candidate_vms;
+    for (auto &it : this->vm_worker_map) {
+        candidate_vms.push_back(it.first);
+    }
+
+    // get idle vms
+    std::vector<std::string> idle_vms;
+    for (const auto &vm : candidate_vms) {
+        if (this->cloud_service->isVMRunning(vm) &&
+            this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) {
+            idle_vms.push_back(vm);
+    }
+
+    if (getNumberRemainingTasks() < getNumberCores()) {
+        if (getNumberIdleCores() == 0) return "";
+        if (is_priority(task->getID()) || is_last(task->getID())) return idle_vms[0];
+
+        std::string best_fit = getBestFit(task->getID(), candidate_vms);
+        if (is_idle(best_fit)) return best_fit;
+        else return "";             
+    }
+    else if (idle_vms.size() > 0) {
+        return idle_vms[0];
+    }
+    else {
+        std::string vm_name;
+    
+        // find idle vm
+        for (const auto &vm : candidate_vms) {
+            if (this->cloud_service->isVMDown(vm)) {
+                vm_name = vm;
+            }
+        }
+
+        if (vm_name.empty()) {            
+            if (getNumberIdleHosts() == 0) return "";
+        
+            // find idle host
+            bool turned_on = false;
+            int num_cores = 1;
+            for (auto &host : this->cloud_service->getExecutionHosts()) {
+                if (!wrench::Simulation::isHostOn(host)) {
+                    wrench::Simulation::turnOnHost(host);
+                    num_cores = wrench::Simulation::getHostNumCores(host);
+                    turned_on = true;
+                    break;
+                }
+            }
+            // turn on idle host
+            if (turned_on) {
+                vm_name = this->cloud_service->createVM(num_cores, 1000000000);
+            }
+        }
+
+        if (vm_name.empty()) return "";
+        
+        // start new VM
+        this->cloud_service->startVM(vm_name);
+        auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
+
+        if (this->vm_worker_map.find(vm_name) == this->vm_worker_map.end()) {
+            this->vm_worker_map.insert(std::pair<std::string, std::string>(vm_name, vm_pm));
+
+            if (this->worker_running_vms.find(vm_pm) == this->worker_running_vms.end()) {
+                this->worker_running_vms.insert(std::pair<std::string, int>(vm_pm, 0));
+            }
+        }
+        this->worker_running_vms.at(vm_pm)++;
+
+        return vm_name;
+    }
+}
