@@ -19,3 +19,15 @@ void Task::remove_dependency(std::string task_name) {
 float Task::get_expected_runtime() {
     return this->runtime;
 }
+
+int Task::get_number_dependencies() {
+    return this->dependencies.size();
+}
+
+float Task::get_start_time() {
+    return this->start_time;
+}
+
+void Task::set_start_time(float start_time) {
+    this->start_time = start_time;
+}

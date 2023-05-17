@@ -24,6 +24,7 @@ private:
     
     int getTotalNumberCores(std::vector<std::string> candidate_vms);
     int getTotalNumberIdleCores(std::vector<std::string> candidate_vms);
+    float calculateIdleTime(std::string vm);
     std::string getBestFit(std::string task, std::vector<std::string> candidate_vms);
     int getNumberIdleHosts();
     std::string getIdleHost();

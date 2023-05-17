@@ -18,10 +18,14 @@ class ClusterInfo {
         int get_number_remaining_tasks();
         bool is_priority(std::string task);
         bool is_last(std::string task);
-        std::vector<wrench::WorkflowTask *> get_tasks(std::string vm);
+        std::list<std::string> get_tasks(std::string vm);
         float predict_time(std::string task);
         void run_task(std::string task, std::string executor);
         void complete_task(std::string task);
+        float get_start_time(std::string task);
+        void set_start_time(std::string task, float time);
+        bool get_turn_off(std::string executor);
+        void set_turn_off(std::string executor, bool value);
 
     private:
         std::vector<wrench::WorkflowTask *> current_task_list;

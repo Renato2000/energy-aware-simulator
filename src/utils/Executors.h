@@ -17,6 +17,9 @@ class Executors {
         void complete_task(std::string task);       
         void add_executor(std::string host, std::string executor);
         void remove_executor(std::string executor);        
+        std::list<std::string> get_tasks(std::string executor);        
+        void set_turn_off(std::string executor, bool value);
+        bool get_turn_off(std::string executor);
 
     private:
         std::map<std::string, std::string> task_executor_map;

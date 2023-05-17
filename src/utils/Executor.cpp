@@ -11,3 +11,11 @@ void Executor::place_task(std::string task) {
 void Executor::conclude_task(std::string task) {
     this->tasks.remove(task);
 }
+
+bool Executor::get_turn_off() {
+    return this->turn_off;
+}
+
+void Executor::set_turn_off(bool value) {
+    this->turn_off = value;
+}

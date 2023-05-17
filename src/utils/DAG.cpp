@@ -22,9 +22,9 @@ DAG::DAG(std::string file_name) {
 
         this->tasks.insert(std::make_pair(name, std::move(task)));
  
-        std::cout << "Job name: " << name << std::endl;
-        std::cout << "Runtime " << runtime << std::endl;
-        std::cout << "Num Parents: " << parents.size() << std::endl;
+        //std::cout << "Job name: " << name << std::endl;
+        //std::cout << "Runtime " << runtime << std::endl;
+        //std::cout << "Num Parents: " << parents.size() << std::endl;
     }
 }
 
@@ -54,4 +54,35 @@ float DAG::get_expected_runtime(std::string task_name) {
 
     std::unique_ptr<Task> &task = this->tasks[task_name];
     return task.get()->get_expected_runtime();
+}
+
+bool DAG::is_priority(std::string task_name) {
+    if (this->tasks.count(task_name) == 0) return false;
+
+    std::unique_ptr<Task> &task = this->tasks[task_name];
+
+    for (auto &t : task.get()->get_childs()) {
+        if (this->tasks.count(task_name) != 0) {
+            std::unique_ptr<Task> &child = this->tasks[t];
+            if (child->get_number_dependencies() == 1) return true;
+        }
+    }
+
+    return false;
+}
+
+void DAG::set_start_time(std::string task_name, float start_time) {
+    if (this->tasks.count(task_name) == 0) return;
+
+    std::unique_ptr<Task> &task = this->tasks[task_name];
+
+    task.get()->set_start_time(start_time);
+}
+
+float DAG::get_start_time(std::string task_name) {
+    if (this->tasks.count(task_name) == 0) return 0;
+
+    std::unique_ptr<Task> &task = this->tasks[task_name];
+
+    return task.get()->get_start_time();;
 }

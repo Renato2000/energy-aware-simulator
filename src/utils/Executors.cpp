@@ -29,3 +29,14 @@ void Executors::remove_executor(std::string executor_name) {
     this->executors.erase(executor_name);
 }
 
+std::list<std::string> Executors::get_tasks(std::string executor_name) {
+    return this->executors[executor_name].get_running_tasks();
+}
+
+void Executors::set_turn_off(std::string executor, bool value) {
+    this->executors[executor].set_turn_off(value);
+}
+
+bool Executors::get_turn_off(std::string executor) {
+    return this->executors[executor].get_turn_off();
+}

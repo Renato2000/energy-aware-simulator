@@ -23,16 +23,31 @@ EnergyAwareAlgorithm::EnergyAwareAlgorithm(std::shared_ptr<ClusterInfo> cluster_
  */
 std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector<wrench::WorkflowTask *> &tasks) {
     auto sorted_tasks = tasks;
-
+ 
+/* 
     std::sort(sorted_tasks.begin(), sorted_tasks.end(),
-              [](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
-                  if (t1->getAverageCPU() == t2->getAverageCPU()) {
-                      return ((uintptr_t) t1 < (uintptr_t) t2);
-                  } else {
-                      return (t1->getAverageCPU() > t2->getAverageCPU());
-                  }
-              });
+            [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
+                if (cluster_info->predict_time(t1->getID()) == cluster_info->predict_time(t2->getID())) {
+                    return ((uintptr_t) t1 < (uintptr_t) t2);
+                } else {
+                    return (cluster_info->predict_time(t1->getID()) > cluster_info->predict_time(t2->getID()));
+                }
+            }); 
 
+*/
+    std::sort(sorted_tasks.begin(), sorted_tasks.end(),
+            [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
+                if (cluster_info->is_priority(t1->getID()) && !cluster_info->is_priority(t2->getID())) {
+                    return true;
+                } else if (cluster_info->is_priority(t2->getID()) && !cluster_info->is_priority(t1->getID())) {
+                    return false;
+                } else if (cluster_info->predict_time(t1->getID()) == cluster_info->predict_time(t2->getID())) {
+                    return ((uintptr_t) t1 < (uintptr_t) t2);
+                } else {
+                    return (cluster_info->predict_time(t1->getID()) > cluster_info->predict_time(t2->getID()));
+                }
+            });
+    
     return sorted_tasks;
 }
 
@@ -42,6 +57,13 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
  * @return
  */
 std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
+    
+    std::cout << "Analyzing task: " << task->getID() << "----------------------------------------------" << std::endl;
+    std::cout << "Available executors: " << std::endl;
+    for(auto &it : vm_worker_map) {
+        auto vm = it.first;
+        std::cout << "\tvm: " << vm << " with " << this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() << " idle cores" << std::endl;
+    }
 
     // find candidate vms
     std::vector<std::string> candidate_vms;
@@ -58,13 +80,28 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
         }
     }
 
-    if (cluster_info->get_number_remaining_tasks() < getTotalNumberCores(candidate_vms)) {
-        if (getTotalNumberIdleCores(candidate_vms) == 0) return "";
-        if (cluster_info->is_priority(task->getID()) || cluster_info->is_last(task->getID())) return idle_vms[0];
+    if (cluster_info->get_number_remaining_tasks() < getTotalNumberCores(candidate_vms)) { 
+        if (getTotalNumberIdleCores(candidate_vms) == 0) {
+            //std::cout << "no cores available" << std::endl;
+            return "";
+        }
+        if (cluster_info->is_priority(task->getID())) {
+            //std::cout << "is priority" << std::endl;
+            return idle_vms[0];
+        }
 
         std::string best_fit = getBestFit(task->getID(), candidate_vms);
-        if (isIdle(best_fit)) return best_fit;
-        else return "";             
+        if (isIdle(best_fit)) {
+            //std::cout << "best_fit is idle" << std::endl;
+            return best_fit;
+        }
+        else {
+            //std::cout << "best_fit not idle" << std::endl;
+            for (const auto &vm : idle_vms) {
+                if (calculateIdleTime(vm) < cluster_info->predict_time(task->getID())) return vm;
+            }
+            return "";
+        }
     }
     else if (idle_vms.size() > 0) {
         return idle_vms[0];
@@ -100,7 +137,7 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
         }
 
         if (vm_name.empty()) return "";
-        
+       
         // start new VM
         this->cloud_service->startVM(vm_name);
         auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
@@ -155,34 +192,42 @@ int EnergyAwareAlgorithm::getTotalNumberIdleCores(std::vector<std::string> candi
     return num_cores;
 }
 
+float EnergyAwareAlgorithm::calculateIdleTime(std::string vm) {
+    float highest = std::numeric_limits<float>::min();
+    float lowest = std::numeric_limits<float>::max();
+
+    std::list<std::string> tasks_vm = cluster_info->get_tasks(vm);
+
+    if (this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) { 
+        lowest = wrench::Simulation::getCurrentSimulatedDate();
+    }
+    else {
+        for (auto t_name : tasks_vm) {
+            if(cluster_info->get_start_time(t_name) + cluster_info->predict_time(t_name) < lowest)
+                lowest = cluster_info->get_start_time(t_name) + cluster_info->predict_time(t_name);
+        }
+
+    }
+        
+    if (tasks_vm.size() == 0) highest = 0;
+    else {
+        for (auto t_name : tasks_vm) {
+            if(cluster_info->get_start_time(t_name) + cluster_info->predict_time(t_name) > highest)
+                highest = cluster_info->get_start_time(t_name) + cluster_info->predict_time(t_name);
+        }
+    }
+
+    return highest - lowest;
+}
+
 std::string EnergyAwareAlgorithm::getBestFit(std::string task, std::vector<std::string> candidate_vms) {
     float best_time = std::numeric_limits<float>::max();
     std::string best_exec = "";
 
     for (const auto &vm : candidate_vms) {
-        float highest = std::numeric_limits<float>::min();
-        float lowest = std::numeric_limits<float>::max();
-
-        std::list<wrench::WorkflowTask *> tasks_vm = cluster_info->get_tasks(vm);
-        
-        if (this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) { 
-            float t_low = wrench::Simulation::getCurrentSimulatedDate();
-        }
-        else {
-            for (auto *t : tasks_vm) {
-                if(t->getStartDate() + cluster_info->predict_time(t->getID()) < lowest)
-                    lowest = t->getStartDate() + cluster_info->predict_time(t->getID());
-            }
-
-        }
-        
-        for (auto *t : tasks_vm) {
-            if(t->getStartDate() + cluster_info->predict_time(t->getID()) > highest)
-                highest = t->getStartDate() + cluster_info->predict_time(t->getID());
-        }
-
-        float idle = highest - lowest;
+        float idle = this->calculateIdleTime(vm);
         float distance = abs(cluster_info->predict_time(task) - idle);
+       
         if (distance < best_time) {
             best_time = distance;
             best_exec = vm; 
@@ -211,5 +256,6 @@ std::string EnergyAwareAlgorithm::getIdleHost() {
 }
 
 bool EnergyAwareAlgorithm::isIdle(std::string vm) {
-    return false;
+    auto ret = this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0;
+    return ret;
 }

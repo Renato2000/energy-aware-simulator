@@ -15,57 +15,51 @@
             </disk>
         </host>
         <host id="worker1" speed="1f, 1.1f" core="12">
-            <prop id="wattage_per_state" value="3:10:70,100:150:220" />            
-            <prop id="watt_off" value="1" />
+            <prop id="wattage_per_state" value="98.080000:112.727273:200.000000,100:150:220" />
+            <prop id="watt_off" value="10" />
             <disk id="hard_drive" read_bw="100MBps" write_bw="100MBps">
                 <prop id="size" value="5000GiB"/>
                 <prop id="mount" value="/"/>
             </disk>
         </host>
         <host id="worker2" speed="1f, 1.1f" core="12">
-            <prop id="wattage_per_state" value="3:10:70,100:150:220" />
-            <prop id="watt_off" value="1" />
+            <prop id="wattage_per_state" value="98.080000:112.727273:200.000000,100:150:220" />
+            <prop id="watt_off" value="10" />
             <disk id="hard_drive" read_bw="100MBps" write_bw="100MBps">
                 <prop id="size" value="5000GiB"/>
                 <prop id="mount" value="/"/>
             </disk>
         </host>
         <host id="worker3" speed="1f, 1.1f" core="12">
-            <prop id="wattage_per_state" value="3:10:70,100:150:220" />
-            <prop id="watt_off" value="1" />
+            <prop id="wattage_per_state" value="98.080000:112.727273:200.000000,100:150:220" />
+            <prop id="watt_off" value="10" />
             <disk id="hard_drive" read_bw="100MBps" write_bw="100MBps">
                 <prop id="size" value="5000GiB"/>
                 <prop id="mount" value="/"/>
             </disk>
         </host>
-        <link id="link1" bandwidth="1.24GBps" latency="100us">
-            <prop id="wattage_range" value="100.0:200.0" />
-            <prop id="wattage_off" value="10" />
-        </link>
-        <link id="link2" bandwidth="55MBps" latency="100us">
-            <prop id="wattage_range" value="100.0:200.0" />
-            <prop id="wattage_off" value="10" />
-        </link>   
+        <link id="1" bandwidth="1.24GBps" latency="100us"/>
+        <link id="2" bandwidth="55MBps" latency="100us"/>
         <route src="master" dst="worker1">
-            <link_ctn id="link1"/>
+            <link_ctn id="1"/>
         </route>
         <route src="master" dst="worker2">
-            <link_ctn id="link1"/>
+            <link_ctn id="1"/>
         </route>
         <route src="master" dst="worker3">
-            <link_ctn id="link1"/>
+            <link_ctn id="1"/>
         </route>
         <route src="data_server" dst="master">
-            <link_ctn id="link2"/>
+            <link_ctn id="2"/>
         </route>
         <route src="data_server" dst="worker1">
-            <link_ctn id="link2"/>
+            <link_ctn id="2"/>
         </route>
         <route src="data_server" dst="worker2">
-            <link_ctn id="link2"/>
+            <link_ctn id="2"/>
         </route>
         <route src="data_server" dst="worker3">
-            <link_ctn id="link2"/>
+            <link_ctn id="2"/>
         </route>
     </zone>
 </platform>

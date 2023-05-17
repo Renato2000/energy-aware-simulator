@@ -180,15 +180,24 @@ int main(int argc, char **argv) {
         total_unpaired_energy += workers_unpaired_power.at(host);
     }
     std::cerr << "Workflow Makespan (s): " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
-    std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
-    std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
-    std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
+    //std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
+    //std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
+    //std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
    
     double total_energy = 0;
     for (auto &host : hosts) {
         total_energy += simulation.getEnergyConsumed(host)/3600;
     } 
     std::cerr << "Total Energy by Wrench (Wh): " << total_energy << std::endl;
+
+    /* 
+    double network_total_energy = 0;
+    std::vector<std::string> links = {"link1", "link2"};    
+    for (auto &link : links) {
+        network_total_energy += simulation.getNetworkEnergyConsumed(link)/3600;
+    } 
+    std::cerr << "Total Network Energy by Wrench (Wh): " << network_total_energy << std::endl;
+    */ 
 
     return 0;
 }
