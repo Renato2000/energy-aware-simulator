@@ -3,6 +3,7 @@
 
 #include "DAG.h"
 #include "Executors.h"
+#include "Hosts.h"
 
 #include <wrench-dev.h>
 #include <memory>
@@ -10,9 +11,10 @@
 
 class ClusterInfo {
     public:
-        ClusterInfo(std::unique_ptr<DAG> &dag, std::unique_ptr<Executors> &executors) :
+        ClusterInfo(std::unique_ptr<DAG> &dag, std::unique_ptr<Executors> &executors, std::unique_ptr<Hosts> &hosts) :
             dag(dag),
-            executors(executors) {}
+            executors(executors),
+            hosts(hosts) {}
 
         void set_current_task_list(std::vector<wrench::WorkflowTask *> tasks);
         int get_number_remaining_tasks();
@@ -26,11 +28,15 @@ class ClusterInfo {
         void set_start_time(std::string task, float time);
         bool get_turn_off(std::string executor);
         void set_turn_off(std::string executor, bool value);
+        const std::vector<std::string> get_hosts();
+        int get_host_cores(std::string host);
 
     private:
+        int remaining_tasks;
         std::vector<wrench::WorkflowTask *> current_task_list;
         std::unique_ptr<DAG> &dag;
-        std::unique_ptr<Executors> &executors;        
+        std::unique_ptr<Executors> &executors;
+        std::unique_ptr<Hosts> &hosts;
 };
 
 #endif

@@ -1,11 +1,12 @@
 #include "ClusterInfo.h"
 
 void ClusterInfo::set_current_task_list(std::vector<wrench::WorkflowTask *> tasks) {
+    this->remaining_tasks = tasks.size();
     this->current_task_list = tasks;
 }
 
 int ClusterInfo::get_number_remaining_tasks() {
-    return this->current_task_list.size();
+    return this->remaining_tasks;
 }
 
 bool ClusterInfo::is_priority(std::string task) {
@@ -26,6 +27,7 @@ float ClusterInfo::predict_time(std::string task) {
 }
 
 void ClusterInfo::run_task(std::string task, std::string executor) {
+    this->remaining_tasks -= 1;
     this->dag->complete_task(task);
     this->executors->run_task(task, executor);
 }
@@ -49,4 +51,12 @@ bool ClusterInfo::get_turn_off(std::string executor) {
 
 void ClusterInfo::set_turn_off(std::string executor, bool value) {
     this->executors->set_turn_off(executor, value);
+}
+
+const std::vector<std::string> ClusterInfo::get_hosts() {
+    return this->hosts->get_hosts();
+}
+
+int ClusterInfo::get_host_cores(std::string host) {
+    return this->hosts->get_host_cores(host);
 }

@@ -1,22 +1,15 @@
 #include "Executors.h"
 
-const std::list<std::string> Executors::get_running_tasks(std::string executor) {
-    std::list<std::string> running_tasks = {};
-
-    for(std::map<std::string, std::string>::iterator it = this->task_executor_map.begin(); 
-            it != this->task_executor_map.end(); 
-            ++it) {
-        running_tasks.push_back(it->first);
-    }
-
-    return running_tasks;
-}
+#include <iostream>
 
 void Executors::run_task(std::string task, std::string executor) {
+    this->executors[executor].place_task(task);
     this->task_executor_map.insert(std::make_pair(task, executor));
 }
 
 void Executors::complete_task(std::string task) {
+    std::string executor = this->task_executor_map[task];
+    this->executors[executor].conclude_task(task); 
     this->task_executor_map.erase(task);
 }
 

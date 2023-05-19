@@ -11,8 +11,6 @@ class Executors {
     public:
         Executors() {}
         
-        const std::list<std::string> get_running_tasks(std::string);
-        
         void run_task(std::string task, std::string executor);
         void complete_task(std::string task);       
         void add_executor(std::string host, std::string executor);

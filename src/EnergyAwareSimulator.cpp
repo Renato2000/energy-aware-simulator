@@ -20,7 +20,7 @@
 #include "scheduling_algorithm/FifoAlgorithm.h"
 #include "scheduling_algorithm/EnergyAwareAlgorithm.h"
 
-#include "utils/DAG.h"
+#include "utils/ClusterInfo.h"
 
 XBT_LOG_NEW_DEFAULT_CATEGORY(EnergyAwareSimulator, "Log category for EnergyAwareSimulator");
 
@@ -43,9 +43,10 @@ int main(int argc, char **argv) {
     char *workflow_file = argv[2];
 
     // instantiating data structures for the scheduling algorithm
-    std::unique_ptr<DAG> dag = std::make_unique<DAG>(DAG(workflow_file));
-    std::unique_ptr<Executors> executors = std::make_unique<Executors>(Executors());
-    std::shared_ptr<ClusterInfo> cluster_info = std::make_shared<ClusterInfo>(ClusterInfo(dag, executors));
+    std::unique_ptr<DAG> dag_ptr = std::make_unique<DAG>(DAG(workflow_file));
+    std::unique_ptr<Executors> executors_ptr = std::make_unique<Executors>(Executors());
+    std::unique_ptr<Hosts> hosts_ptr = std::make_unique<Hosts>(Hosts(platform_file));
+    std::shared_ptr<ClusterInfo> cluster_info = std::make_shared<ClusterInfo>(ClusterInfo(dag_ptr, executors_ptr, hosts_ptr));
 
     // instantiating SimGrid platform
     WRENCH_INFO("Instantiating SimGrid platform from: %s", platform_file);
@@ -68,7 +69,8 @@ int main(int argc, char **argv) {
 
     // compute services
     std::set<std::shared_ptr<wrench::ComputeService>> compute_services;
-    std::vector<std::string> hosts{"worker1", "worker2", "worker3"};
+    std::vector<std::string> hosts = cluster_info->get_hosts();
+    
     auto cloud_service = simulation.add(new wrench::CloudComputeService(wms_host, hosts, {"/"}, {}, {
             {wrench::CloudComputeServiceMessagePayload::START_VM_REQUEST_MESSAGE_PAYLOAD,    1024},
             {wrench::CloudComputeServiceMessagePayload::SHUTDOWN_VM_REQUEST_MESSAGE_PAYLOAD, 1024},
@@ -85,8 +87,8 @@ int main(int argc, char **argv) {
 //    auto scheduling_algorithm = std::make_unique<IOAwareAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
-//    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
-      auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
+    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
+//    auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
             cloud_service,
             std::make_unique<TraditionalPowerModel>(cloud_service));
 

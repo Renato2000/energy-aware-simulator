@@ -37,6 +37,8 @@ set(UTILS
     src/utils/Executors.cpp
     src/utils/ClusterInfo.h
     src/utils/ClusterInfo.cpp
+    src/utils/Hosts.h
+    src/utils/Hosts.cpp
 )
 
 # scheduling algorithms

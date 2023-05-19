@@ -77,6 +77,8 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     this->cloud_service->startVM(vm_name);
     auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
 
+    std::cout << "[Scheduler] Start vm " << vm_name << " on host " << vm_pm << " with " << wrench::Simulation::getHostNumCores(vm_pm) << " cores at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
+
     if (this->vm_worker_map.find(vm_name) == this->vm_worker_map.end()) {
         this->vm_worker_map.insert(std::pair<std::string, std::string>(vm_name, vm_pm));
 
