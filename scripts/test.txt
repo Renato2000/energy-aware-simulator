@@ -1,0 +1,22 @@
+XML file parsed successfully.
+Total Number of Workflow Tasks: 7
+[Scheduler] Start vm cloud_service_2_vm1 on host worker1 with 2 cores at 1.68907e-06
+[Scheduler] Start task Task_1 on vm cloud_service_2_vm1 at 1.68907e-06
+[Scheduler] Start task Task_2 on vm cloud_service_2_vm1 at 2.11134e-06
+[Scheduler] Start vm cloud_service_2_vm2 on host worker2 with 2 cores at 3.37814e-06
+[Scheduler] Start task Task_3 on vm cloud_service_2_vm2 at 3.37814e-06
+[Scheduler] Start task Task_4 on vm cloud_service_2_vm2 at 4.01155e-06
+[Scheduler] Task Task_4 ended at 170.001
+[Scheduler] Start task Task_5 on vm cloud_service_2_vm2 at 170.001
+[Scheduler] Task Task_3 ended at 180.001
+[Scheduler] Start task Task_6 on vm cloud_service_2_vm2 at 180.001
+[Scheduler] Task Task_2 ended at 190.001
+[Scheduler] Start task Task_7 on vm cloud_service_2_vm1 at 190.001
+[Scheduler] Task Task_1 ended at 200.001
+[Scheduler] Task Task_7 ended at 240.003
+[Scheduler] Turn off vm worker1 at 240.003
+[Scheduler] Task Task_6 ended at 280.003
+[Scheduler] Task Task_5 ended at 320.003
+[Scheduler] Turn off vm worker2 at 320.003
+Workflow Makespan (s): 320.003
+Total Energy by Wrench (Wh): 10.2445
