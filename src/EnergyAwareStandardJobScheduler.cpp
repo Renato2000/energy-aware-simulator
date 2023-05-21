@@ -69,7 +69,7 @@ void EnergyAwareStandardJobScheduler::scheduleTasks(
 
         if (!vm_name.empty()) {
             
-            std::cout << "[Scheduler] Start task " << task->getID() << " on vm " << vm_name << " at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
+            //std::cout << "[Scheduler] Start task " << task->getID() << " on vm " << vm_name << " at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
 
             // finding the file locations
             std::map<wrench::WorkflowFile *, std::shared_ptr<wrench::FileLocation>> file_locations;
@@ -107,7 +107,7 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         wrench::WorkflowTask *task) {
     
     this->cluster_info->complete_task(task->getID());
-    std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
+    // std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     if (this->unscheduled_tasks > 0) {
         this->unscheduled_tasks--;
     } 
@@ -118,7 +118,7 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
     try {
         if (vm_cs->getTotalNumCores() == vm_cs->getTotalNumIdleCores()) {
 		    auto vm_pm = cloud_service->getVMPhysicalHostname(it->second);
-			std::cout << "[Scheduler] Turn off vm " << vm_pm << " at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
+			// std::cout << "[Scheduler] Turn off vm " << vm_pm << " at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
             cloud_service->shutdownVM(it->second);
             this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
 	    }

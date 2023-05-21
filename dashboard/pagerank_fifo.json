@@ -1,0 +1,2582 @@
+{
+    "workflow_execution": {
+        "tasks": [
+            {
+                "color": "",
+                "compute": {
+                    "end": 174.9270017946381,
+                    "start": 1.7946391752577314e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_0",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 174.9270017946381,
+                    "start": 1.7946391752577314e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 177.18900221690598,
+                    "start": 2.2169072164948445e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_1",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 177.18900221690598,
+                    "start": 2.2169072164948445e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 177.20400263917406,
+                    "start": 2.6391752577319576e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_10",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 177.20400263917406,
+                    "start": 2.6391752577319576e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 969.1248563554565,
+                    "start": 809.4178563554565
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_100",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 969.1248563554565,
+                    "start": 809.4178563554565
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 937.5108567777244,
+                    "start": 809.4178567777244
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_101",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 937.5108567777244,
+                    "start": 809.4178567777244
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 964.1148571999923,
+                    "start": 809.4178571999923
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_102",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 964.1148571999923,
+                    "start": 809.4178571999923
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 958.7738576222603,
+                    "start": 809.4178576222603
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_103",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 958.7738576222603,
+                    "start": 809.4178576222603
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 975.8611592556622,
+                    "start": 969.1261592556622
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_104",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 975.8611592556622,
+                    "start": 969.1261592556622
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 974.5601596779301,
+                    "start": 969.1261596779301
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_105",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 974.5601596779301,
+                    "start": 969.1261596779301
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 974.539160100198,
+                    "start": 969.126160100198
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_106",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 974.539160100198,
+                    "start": 969.126160100198
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 975.8581605224659,
+                    "start": 969.126160522466
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_107",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 975.8581605224659,
+                    "start": 969.126160522466
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 974.5581609447339,
+                    "start": 969.1261609447339
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_108",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 974.5581609447339,
+                    "start": 969.1261609447339
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 974.5381613670019,
+                    "start": 969.1261613670018
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_109",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 974.5381613670019,
+                    "start": 969.1261613670018
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 176.65000306144213,
+                    "start": 3.0614432989690707e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_11",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 176.65000306144213,
+                    "start": 3.0614432989690707e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 975.8581617892697,
+                    "start": 969.1261617892698
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_110",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 975.8581617892697,
+                    "start": 969.1261617892698
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 974.5581622115377,
+                    "start": 969.1261622115377
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_111",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 974.5581622115377,
+                    "start": 969.1261622115377
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 170.24500348371055,
+                    "start": 3.4837113402061837e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_12",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 170.24500348371055,
+                    "start": 3.4837113402061837e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.53700390597862,
+                    "start": 3.905979381443297e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_13",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.53700390597862,
+                    "start": 3.905979381443297e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 121.06700432824722,
+                    "start": 4.328247422680412e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_14",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 121.06700432824722,
+                    "start": 4.328247422680412e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.57400475051475,
+                    "start": 4.750515463917527e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_15",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.57400475051475,
+                    "start": 4.750515463917527e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.60900517278276,
+                    "start": 5.1727835051546416e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_16",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.60900517278276,
+                    "start": 5.1727835051546416e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.25000559505082,
+                    "start": 5.595051546391756e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_17",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.25000559505082,
+                    "start": 5.595051546391756e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 170.4380060173188,
+                    "start": 6.017319587628871e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_18",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 170.4380060173188,
+                    "start": 6.017319587628871e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 120.99600643958745,
+                    "start": 6.439587628865986e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_19",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 120.99600643958745,
+                    "start": 6.439587628865986e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 175.6450077063907,
+                    "start": 7.70639175257733e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_2",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 175.6450077063907,
+                    "start": 7.70639175257733e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 170.90100833979307,
+                    "start": 8.339793814432997e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_20",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 170.90100833979307,
+                    "start": 8.339793814432997e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 166.2780089731953,
+                    "start": 8.973195876288664e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_21",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 166.2780089731953,
+                    "start": 8.973195876288664e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 171.14200960659713,
+                    "start": 9.606597938144331e-06
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_22",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 171.14200960659713,
+                    "start": 9.606597938144331e-06
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.10501023999927,
+                    "start": 1.0239999999999999e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_23",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.10501023999927,
+                    "start": 1.0239999999999999e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 120.96701087340192,
+                    "start": 1.0873402061855666e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_24",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 120.96701087340192,
+                    "start": 1.0873402061855666e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 172.9610115068033,
+                    "start": 1.1506804123711333e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_25",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 172.9610115068033,
+                    "start": 1.1506804123711333e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 171.0790121402054,
+                    "start": 1.2140206185567e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_26",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 171.0790121402054,
+                    "start": 1.2140206185567e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 172.31201277360742,
+                    "start": 1.2773608247422667e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_27",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 172.31201277360742,
+                    "start": 1.2773608247422667e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 171.13001340700953,
+                    "start": 1.3407010309278334e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_28",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 171.13001340700953,
+                    "start": 1.3407010309278334e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 120.50001404041224,
+                    "start": 1.4040412371134001e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_29",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 120.50001404041224,
+                    "start": 1.4040412371134001e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 177.2850146738133,
+                    "start": 1.4673814432989668e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_3",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 177.2850146738133,
+                    "start": 1.4673814432989668e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 172.29801615175177,
+                    "start": 1.6151752577319573e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_30",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 172.29801615175177,
+                    "start": 1.6151752577319573e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 172.81401699628782,
+                    "start": 1.699628865979381e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_31",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 172.81401699628782,
+                    "start": 1.699628865979381e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 169.2840178408241,
+                    "start": 1.7840824742268046e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_32",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 169.2840178408241,
+                    "start": 1.7840824742268046e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 171.18301868536008,
+                    "start": 1.8685360824742282e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_33",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 171.18301868536008,
+                    "start": 1.8685360824742282e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 121.01301952989682,
+                    "start": 1.952989690721652e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_34",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 121.01301952989682,
+                    "start": 1.952989690721652e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 175.62002037443204,
+                    "start": 2.0374432989690755e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_35",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 175.62002037443204,
+                    "start": 2.0374432989690755e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 83.90202121896886,
+                    "start": 2.121896907216499e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_36",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 83.90202121896886,
+                    "start": 2.121896907216499e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 85.41202206350496,
+                    "start": 2.2063505154639227e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_37",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 85.41202206350496,
+                    "start": 2.2063505154639227e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 68.16902290804097,
+                    "start": 2.2908041237113464e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_38",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 68.16902290804097,
+                    "start": 2.2908041237113464e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 26.94002375257728,
+                    "start": 2.37525773195877e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_39",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 26.94002375257728,
+                    "start": 2.37525773195877e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 112.72702459711336,
+                    "start": 2.4597113402061936e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_4",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 112.72702459711336,
+                    "start": 2.4597113402061936e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 375.9886263859786,
+                    "start": 261.2716263859786
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_40",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 375.9886263859786,
+                    "start": 261.2716263859786
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 384.79362680824653,
+                    "start": 261.27162680824654
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_41",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 384.79362680824653,
+                    "start": 261.27162680824654
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 384.5646272305145,
+                    "start": 261.27162723051447
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_42",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 384.5646272305145,
+                    "start": 261.27162723051447
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 373.6456276527824,
+                    "start": 261.2716276527824
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_43",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 373.6456276527824,
+                    "start": 261.2716276527824
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.62962807505033,
+                    "start": 261.27162807505033
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_44",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.62962807505033,
+                    "start": 261.27162807505033
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 387.2126284973183,
+                    "start": 261.27162849731826
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_45",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 387.2126284973183,
+                    "start": 261.27162849731826
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 375.5506289195862,
+                    "start": 261.2716289195862
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_46",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 375.5506289195862,
+                    "start": 261.2716289195862
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 385.7906293418541,
+                    "start": 261.2716293418541
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_47",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 385.7906293418541,
+                    "start": 261.2716293418541
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.74762976412205,
+                    "start": 261.27162976412205
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_48",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.74762976412205,
+                    "start": 261.27162976412205
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.65463018638997,
+                    "start": 261.27163018639
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_49",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.65463018638997,
+                    "start": 261.27163018639
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 177.43002544164847,
+                    "start": 2.5441649484536173e-05
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_5",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 177.43002544164847,
+                    "start": 2.5441649484536173e-05
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.6946306086579,
+                    "start": 261.2716306086579
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_50",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.6946306086579,
+                    "start": 261.2716306086579
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.60763103092586,
+                    "start": 261.27163103092585
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_51",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.60763103092586,
+                    "start": 261.27163103092585
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 373.85363229772963,
+                    "start": 261.27163229772964
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_52",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 373.85363229772963,
+                    "start": 261.27163229772964
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 387.0676329311315,
+                    "start": 261.27163293113153
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_53",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 387.0676329311315,
+                    "start": 261.27163293113153
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 387.3736335645334,
+                    "start": 261.27163356453343
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_54",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 387.3736335645334,
+                    "start": 261.27163356453343
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.5846341979353,
+                    "start": 261.2716341979353
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_55",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.5846341979353,
+                    "start": 261.2716341979353
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.9206348313372,
+                    "start": 261.2716348313372
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_56",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.9206348313372,
+                    "start": 261.2716348313372
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.1176354647391,
+                    "start": 261.2716354647391
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_57",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.1176354647391,
+                    "start": 261.2716354647391
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.374636098141,
+                    "start": 261.271636098141
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_58",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.374636098141,
+                    "start": 261.271636098141
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 384.66263673154293,
+                    "start": 261.2716367315429
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_59",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 384.66263673154293,
+                    "start": 261.2716367315429
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 201.2983260193796,
+                    "start": 26.941326019381414
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_6",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 201.2983260193796,
+                    "start": 26.941326019381414
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.3536373649448,
+                    "start": 261.2716373649448
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_60",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.3536373649448,
+                    "start": 261.2716373649448
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.31863799834673,
+                    "start": 261.2716379983467
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_61",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.31863799834673,
+                    "start": 261.2716379983467
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.1276386317486,
+                    "start": 261.2716386317486
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_62",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.1276386317486,
+                    "start": 261.2716386317486
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.7626392651505,
+                    "start": 261.2716392651505
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_63",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.7626392651505,
+                    "start": 261.2716392651505
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.07964074308825,
+                    "start": 261.27164074308826
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_64",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.07964074308825,
+                    "start": 261.27164074308826
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 385.8556415876241,
+                    "start": 261.2716415876241
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_65",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 385.8556415876241,
+                    "start": 261.2716415876241
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 375.34264243216,
+                    "start": 261.27164243216
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_66",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 375.34264243216,
+                    "start": 261.27164243216
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 377.0706432766958,
+                    "start": 261.27164327669584
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_67",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 377.0706432766958,
+                    "start": 261.27164327669584
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 384.7146441212317,
+                    "start": 261.2716441212317
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_68",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 384.7146441212317,
+                    "start": 261.2716441212317
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 384.32464496576756,
+                    "start": 261.27164496576756
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_69",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 384.32464496576756,
+                    "start": 261.27164496576756
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 245.5033251748451,
+                    "start": 68.1703251748451
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_7",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 245.5033251748451,
+                    "start": 68.1703251748451
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 376.08764581030346,
+                    "start": 261.2716458103034
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_70",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 376.08764581030346,
+                    "start": 261.2716458103034
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 385.8366466548393,
+                    "start": 261.2716466548393
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_71",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 385.8366466548393,
+                    "start": 261.2716466548393
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.4216474993751,
+                    "start": 261.27164749937515
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_72",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.4216474993751,
+                    "start": 261.27164749937515
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 374.843648343911,
+                    "start": 261.271648343911
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_73",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 374.843648343911,
+                    "start": 261.271648343911
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.6626491884469,
+                    "start": 261.2716491884469
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_74",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.6626491884469,
+                    "start": 261.2716491884469
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 386.68665003298275,
+                    "start": 261.27165003298273
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_75",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 386.68665003298275,
+                    "start": 261.27165003298273
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 393.8049294973183,
+                    "start": 373.6469294973183
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_76",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 393.8049294973183,
+                    "start": 373.6469294973183
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 393.8279343533995,
+                    "start": 373.85493435339947
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker2",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_77",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 393.8279343533995,
+                    "start": 373.85493435339947
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 394.1239506107148,
+                    "start": 374.8449506107148
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_78",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 394.1239506107148,
+                    "start": 374.8449506107148
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 404.4329446989638,
+                    "start": 375.3439446989638
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_79",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 404.4329446989638,
+                    "start": 375.3439446989638
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 261.2703234857729,
+                    "start": 83.90332348577299
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_8",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 261.2703234857729,
+                    "start": 83.90332348577299
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 634.8902475991695,
+                    "start": 404.4342475991695
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_80",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 634.8902475991695,
+                    "start": 404.4342475991695
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 639.5252480214374,
+                    "start": 404.43424802143744
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_81",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 639.5252480214374,
+                    "start": 404.43424802143744
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 585.5182484437054,
+                    "start": 404.43424844370537
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_82",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 585.5182484437054,
+                    "start": 404.43424844370537
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 633.5002488659733,
+                    "start": 404.4342488659733
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_83",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 633.5002488659733,
+                    "start": 404.4342488659733
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 643.4792492882412,
+                    "start": 404.43424928824123
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_84",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 643.4792492882412,
+                    "start": 404.43424928824123
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 584.6032497105092,
+                    "start": 404.43424971050916
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_85",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 584.6032497105092,
+                    "start": 404.43424971050916
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 626.4122501327771,
+                    "start": 404.4342501327771
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_86",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 626.4122501327771,
+                    "start": 404.4342501327771
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 640.374250555045,
+                    "start": 404.434250555045
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_87",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 640.374250555045,
+                    "start": 404.434250555045
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 807.6645521884469,
+                    "start": 643.480552188447
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_88",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 807.6645521884469,
+                    "start": 643.480552188447
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 802.7475526107148,
+                    "start": 643.4805526107149
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_89",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 802.7475526107148,
+                    "start": 643.4805526107149
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 198.12732433030908,
+                    "start": 85.4133243303091
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker3",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_9",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 198.12732433030908,
+                    "start": 85.4133243303091
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 766.5595530329828,
+                    "start": 643.4805530329828
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_90",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 766.5595530329828,
+                    "start": 643.4805530329828
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 809.4165534552508,
+                    "start": 643.4805534552507
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_91",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 809.4165534552508,
+                    "start": 643.4805534552507
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 808.1795538775186,
+                    "start": 643.4805538775187
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_92",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 808.1795538775186,
+                    "start": 643.4805538775187
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 764.4145542997866,
+                    "start": 643.4805542997866
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_93",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 764.4145542997866,
+                    "start": 643.4805542997866
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 802.2505547220545,
+                    "start": 643.4805547220545
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_94",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 802.2505547220545,
+                    "start": 643.4805547220545
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 805.6475551443225,
+                    "start": 643.4805551443225
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_95",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 805.6475551443225,
+                    "start": 643.4805551443225
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 965.6668580445282,
+                    "start": 809.4178580445282
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_96",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 965.6668580445282,
+                    "start": 809.4178580445282
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 967.7518584667962,
+                    "start": 809.4178584667961
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_97",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 967.7518584667962,
+                    "start": 809.4178584667961
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 930.105858889064,
+                    "start": 809.4178588890641
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_98",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 930.105858889064,
+                    "start": 809.4178588890641
+                },
+                "write": null
+            },
+            {
+                "color": "",
+                "compute": {
+                    "end": 967.050859311332,
+                    "start": 809.417859311332
+                },
+                "execution_host": {
+                    "cores": 12,
+                    "flop_rate": 1.0,
+                    "hostname": "worker1",
+                    "memory_manager_service": 1.125899906842624e+15
+                },
+                "failed": -1.0,
+                "num_cores_allocated": 1,
+                "read": null,
+                "task_id": "App_0_Task_99",
+                "terminated": -1.0,
+                "whole_task": {
+                    "end": 967.050859311332,
+                    "start": 809.417859311332
+                },
+                "write": null
+            }
+        ]
+    }
+}
