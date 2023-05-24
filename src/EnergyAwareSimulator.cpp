@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 //    auto scheduling_algorithm = std::make_unique<IOAwareAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
-//    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
+//      auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
       auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
             cloud_service,
             std::make_unique<TraditionalPowerModel>(cloud_service));
