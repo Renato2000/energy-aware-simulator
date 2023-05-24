@@ -17,6 +17,7 @@ with open(in_json) as f:
     workflow['workflow'] = {}
     workflow['workflow']['jobs'] = []
     workflow['workflow']['machines'] = []
+    workflow['workflow']['makespan'] = data['workflow']['makespanInSeconds']
 
     # Read machines info
     for machine in data['workflow']['machines']:
@@ -43,7 +44,7 @@ with open(in_json) as f:
             'name': task_name,
             'type': task_type,
             'parents': task_parents,
-            'files': task_files,
+            'files': [],
             'machine': task_machine,
             'avgCPU': 0,
             'memory': 0,
