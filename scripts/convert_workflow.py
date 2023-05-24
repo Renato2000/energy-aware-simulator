@@ -33,6 +33,7 @@ with open(in_json) as f:
         task_type = task['type']
         task_parents = task['parents']
         task_files = task['files']
+        task_machine = task['machine']
         task_num_cores = 1
         if 'cores' in task:
             task_num_cores = task['cores']
@@ -43,7 +44,10 @@ with open(in_json) as f:
             'type': task_type,
             'parents': task_parents,
             'files': task_files,
-            'runtime': task_runtime,
+            'machine': task_machine,
+            'avgCPU': 0,
+            'memory': 0,
+            'runtime': task_runtime
         })
 
     result = json.dumps(workflow)
