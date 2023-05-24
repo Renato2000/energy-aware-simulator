@@ -10,6 +10,7 @@
 #include "EnergyAwareStandardJobScheduler.h"
 
 #include <utility>
+#include <chrono>
 
 WRENCH_LOG_CATEGORY(energy_aware_scheduler, "Log category for EnergyAwareStandardJobScheduler");
 
@@ -38,6 +39,9 @@ EnergyAwareStandardJobScheduler::EnergyAwareStandardJobScheduler(
 void EnergyAwareStandardJobScheduler::scheduleTasks(
         const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
         const std::vector<wrench::WorkflowTask *> &tasks) {
+
+    auto start = std::chrono::high_resolution_clock::now();
+
     // If nothing to do, return;
     if (compute_services.empty() or tasks.empty()) {
         return;
@@ -95,6 +99,10 @@ void EnergyAwareStandardJobScheduler::scheduleTasks(
             this->cluster_info->set_start_time(task->getID(), wrench::Simulation::getCurrentSimulatedDate());
        }
     }
+
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+    this->cluster_info->add_algorithm_time(duration);
 }
 
 /**

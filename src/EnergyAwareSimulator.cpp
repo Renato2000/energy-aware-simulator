@@ -87,8 +87,8 @@ int main(int argc, char **argv) {
 //    auto scheduling_algorithm = std::make_unique<IOAwareAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
-      auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
-//    auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
+//    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(
+      auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
             cloud_service,
             std::make_unique<TraditionalPowerModel>(cloud_service));
 
@@ -191,6 +191,8 @@ int main(int argc, char **argv) {
         total_energy += simulation.getEnergyConsumed(host)/3600;
     } 
     std::cerr << "Total Energy by Wrench (Wh): " << total_energy << std::endl;
+
+    std::cerr << "Total time spent on scheduling (ms): " << cluster_info->get_algorithm_time() / 1000000.0 << std::endl;;
 
     /* 
     double network_total_energy = 0;

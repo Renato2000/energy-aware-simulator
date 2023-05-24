@@ -1,0 +1,80 @@
+{
+    "name":"Workload",
+    "workflow":{
+       "jobs":[
+          {
+             "avgCPU":0,
+             "files":[
+                
+             ],
+             "name":"Task_1",
+             "type":"compute",
+             "machine":"192.168.112.135",
+             "parents":[
+                
+             ],
+             "memory":0,
+             "runtime":1000
+          },
+          {
+             "avgCPU":0,
+             "files":[
+                
+             ],
+             "name":"Task_2",
+             "type":"compute",
+             "machine":"192.168.112.135",
+             "parents":[
+                
+             ],
+             "memory":0,
+             "runtime":1000
+          },
+          {
+             "avgCPU":0,
+             "files":[
+                
+             ],
+             "name":"Task_3",
+             "type":"compute",
+             "machine":"192.168.112.135",
+             "parents":[
+                
+             ],
+             "memory":0,
+             "runtime":1000
+          },
+          {
+             "avgCPU":0,
+             "files":[
+                
+             ],
+             "name":"Task_4",
+             "type":"compute",
+             "machine":"192.168.112.135",
+             "parents":[
+                
+             ],
+             "memory":0,
+             "runtime":1000
+          },
+          {
+             "avgCPU":0,
+             "files":[
+                
+             ],
+             "name":"Task_5",
+             "type":"compute",
+             "machine":"192.168.112.135",
+             "parents":[
+                
+             ],
+             "memory":0,
+             "runtime":1000
+          }
+       ],
+       "machines":[
+          
+       ]
+    }
+ }

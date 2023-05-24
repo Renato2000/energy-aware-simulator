@@ -60,3 +60,11 @@ const std::vector<std::string> ClusterInfo::get_hosts() {
 int ClusterInfo::get_host_cores(std::string host) {
     return this->hosts->get_host_cores(host);
 }
+
+void ClusterInfo::add_algorithm_time(long time) {
+    this->alg_time += time;
+}
+
+long ClusterInfo::get_algorithm_time() {
+    return this->alg_time;
+}

@@ -40,10 +40,6 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
         if (this->cloud_service->isVMRunning(vm) &&
             this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) {
             return vm;
-        //} else if (this->cloud_service->isVMSuspended(vm) &&
-        //    this->cloud_service->getVMComputeService(vm)->getTotalNumIdleCores() > 0) {
-        //    this->cloud_service->resumeVM(vm);
-        //    return vm;
         } else if (vm_name.empty() && this->cloud_service->isVMDown(vm)) {
             vm_name = vm;
         }

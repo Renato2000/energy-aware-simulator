@@ -12,6 +12,7 @@
 class ClusterInfo {
     public:
         ClusterInfo(std::unique_ptr<DAG> &dag, std::unique_ptr<Executors> &executors, std::unique_ptr<Hosts> &hosts) :
+            alg_time(0),
             dag(dag),
             executors(executors),
             hosts(hosts) {}
@@ -30,8 +31,11 @@ class ClusterInfo {
         void set_turn_off(std::string executor, bool value);
         const std::vector<std::string> get_hosts();
         int get_host_cores(std::string host);
+        long get_algorithm_time();
+        void add_algorithm_time(long time);
 
     private:
+        long alg_time;
         int remaining_tasks;
         std::vector<wrench::WorkflowTask *> current_task_list;
         std::unique_ptr<DAG> &dag;
