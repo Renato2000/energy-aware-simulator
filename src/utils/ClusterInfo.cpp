@@ -68,3 +68,7 @@ void ClusterInfo::add_algorithm_time(long time) {
 long ClusterInfo::get_algorithm_time() {
     return this->alg_time;
 }
+
+float ClusterInfo::get_blevel(std::string task) {
+    return this->dag->get_blevel(task);
+}

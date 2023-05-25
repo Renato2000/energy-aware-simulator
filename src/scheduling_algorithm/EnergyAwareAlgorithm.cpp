@@ -35,6 +35,7 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
             }); 
 
 */
+/*
     std::sort(sorted_tasks.begin(), sorted_tasks.end(),
             [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
                 if (cluster_info->is_priority(t1->getID()) && !cluster_info->is_priority(t2->getID())) {
@@ -47,7 +48,17 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
                     return (cluster_info->predict_time(t1->getID()) > cluster_info->predict_time(t2->getID()));
                 }
             });
-    
+*/
+
+     std::sort(sorted_tasks.begin(), sorted_tasks.end(),
+            [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
+                if (cluster_info->get_blevel(t1->getID()) == cluster_info->get_blevel(t2->getID())) {
+                    return ((uintptr_t) t1 < (uintptr_t) t2);
+                } else {
+                    return (cluster_info->get_blevel(t1->getID()) > cluster_info->get_blevel(t2->getID()));
+                }
+            }); 
+   
     return sorted_tasks;
 }
 

@@ -31,3 +31,11 @@ float Task::get_start_time() {
 void Task::set_start_time(float start_time) {
     this->start_time = start_time;
 }
+
+float Task::get_blevel() {
+    return this->blevel;
+}
+
+void Task::set_blevel(float value) {
+    this->blevel = value;
+}

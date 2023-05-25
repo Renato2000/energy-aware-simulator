@@ -10,7 +10,7 @@ class Task {
         Task() {}
         Task(const std::string &name) : name(name) {}
         Task(const std::string &name, std::list<std::string> dependencies, float runtime) : 
-            name(name), start_time(0), runtime(runtime), dependencies(dependencies) {}
+            blevel(-1), name(name), start_time(0), runtime(runtime), dependencies(dependencies) {}
 
         bool operator==(const Task &t) {
             return this->name.compare(t.name) == 0;
@@ -25,8 +25,11 @@ class Task {
         int get_number_dependencies();        
         float get_start_time();
         void set_start_time(float time);
+        float get_blevel();
+        void set_blevel(float value);
 
     private:
+        float blevel;
         const std::string name;
         float start_time;
         float runtime;

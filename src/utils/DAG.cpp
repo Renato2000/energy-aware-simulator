@@ -84,5 +84,26 @@ float DAG::get_start_time(std::string task_name) {
 
     std::unique_ptr<Task> &task = this->tasks[task_name];
 
-    return task.get()->get_start_time();;
+    return task.get()->get_start_time();
+}
+
+float DAG::get_blevel(std::string task_name) {
+    if (this->tasks.count(task_name) == 0) return 0;
+
+    if (this->tasks[task_name]->get_blevel() > 0) return this->tasks[task_name]->get_blevel();
+
+    std::unique_ptr<Task> &task = this->tasks[task_name];
+
+    float cost = task->get_expected_runtime();
+    float max = 0;
+
+    for (auto &child_name : task->get_childs()) {
+        float child_cost = this->get_blevel(child_name);
+        if (child_cost > max) max = child_cost;
+    }
+
+    float blevel = cost + max;
+    task->set_blevel(blevel);
+
+    return blevel;
 }
