@@ -93,7 +93,7 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
         }
     }
 
-    if (candidate_vms.size() > 0 && cluster_info->get_number_remaining_tasks() < getTotalNumberCores(candidate_vms)) { 
+    if (candidate_vms.size() > 0 && cluster_info->get_number_remaining_tasks() <= getTotalNumberCores(candidate_vms)) { 
         if (getTotalNumberIdleCores(candidate_vms) == 0) {
             //std::cout << "no cores available" << std::endl;
             return "";
