@@ -13,6 +13,7 @@
 #include <wrench-dev.h>
 
 #include "PowerMeter.h"
+#include "EnergyMeter.h"
 
 /**
  *  @brief A Workflow Management System (WMS) implementation that greedily
