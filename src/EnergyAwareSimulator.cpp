@@ -173,7 +173,7 @@ int main(int argc, char **argv) {
                                                    ((diff > 0 ? diff : 1) / 3600.0);
             previous_unpaired_date = measurement->getContent()->getDate();
         } else if (model == "energy_meter") {
-            auto diff = (measurement->getContent()->getDate() - previous_unpaired_date);
+            auto diff = (measurement->getContent()->getDate() - previous_energy_meter);
             workers_energy_meter.at(hostname) += measurement->getContent()->getConsumption() *
                                                    ((diff > 0 ? diff : 1) / 3600.0);
             previous_energy_meter = measurement->getContent()->getDate();

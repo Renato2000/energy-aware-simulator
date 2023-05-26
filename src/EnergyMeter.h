@@ -3,6 +3,8 @@
 
 #include <wrench-dev.h>
 
+#include "utils/ClusterInfo.h"
+
 class EnergyMeter : public wrench::Service {
 public:
     EnergyMeter(wrench::WMS *wms,

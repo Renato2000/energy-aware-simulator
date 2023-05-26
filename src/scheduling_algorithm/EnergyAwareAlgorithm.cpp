@@ -69,8 +69,8 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
  */
 std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     
-    std::cout << "Analyzing task: " << task->getID() << "----------------------------------------------" << std::endl;
     /*
+    std::cout << "Analyzing task: " << task->getID() << "----------------------------------------------" << std::endl;
     std::cout << "Available executors: " << std::endl;
     for(auto &it : vm_worker_map) {
         auto vm = it.first;
@@ -121,8 +121,6 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
     }
     else {
         std::string vm_name;
-   
-        std::cout << "Here" << std::endl; 
  
         // find idle vm
         for (const auto &vm : candidate_vms) {

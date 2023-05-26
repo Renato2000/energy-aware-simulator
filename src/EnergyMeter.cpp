@@ -1,6 +1,6 @@
 #include "EnergyMeter.h"
 
-XBT_LOG_NEW_DEFAULT_CATEGORY(power_meter, "Log category for EnergyMeter");
+XBT_LOG_NEW_DEFAULT_CATEGORY(energy_meter, "Log category for EnergyMeter");
 
 /**
  * @brief Constructor
@@ -14,7 +14,6 @@ EnergyMeter::EnergyMeter(wrench::WMS *wms,
                        std::shared_ptr<ClusterInfo> cluster_info,
                        double measurement_period) :
         Service(wms->hostname, "energy_meter", "energy_meter"),
-        cloud_service(cloud_service),
         wms(wms),
         measurement_period(measurement_period) {
     // sanity checks
@@ -126,7 +125,7 @@ void EnergyMeter::computePowerMeasurements(const std::string &hostname,
     else if (used_cores == 11) consumption += 70;
     else if (used_cores == 12) consumption += 71;
 
-    this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter" + "__" + hostname, consumption);
+    this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter__" + hostname, consumption);
 }
 
 /**
@@ -156,7 +155,7 @@ bool EnergyMeter::processNextMessage(double timeout) {
 
     } else {
         throw std::runtime_error(
-                "PowerMeter::waitForNextMessage(): Unexpected [" + message->getName() + "] message");
+                "EnergyMeter::waitForNextMessage(): Unexpected [" + message->getName() + "] message");
     }
 }
 
@@ -166,7 +165,7 @@ bool EnergyMeter::processNextMessage(double timeout) {
  * @throw WorkflowExecutionException
  * @throw std::runtime_error
  */
-void PowerMeter::stop() {
+void EnergyMeter::stop() {
     try {
         wrench::S4U_Mailbox::putMessage(this->mailbox_name, new wrench::ServiceStopDaemonMessage("", 0.0));
     } catch (std::shared_ptr<wrench::NetworkError> &cause) {
