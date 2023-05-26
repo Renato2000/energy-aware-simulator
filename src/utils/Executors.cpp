@@ -33,3 +33,11 @@ void Executors::set_turn_off(std::string executor, bool value) {
 bool Executors::get_turn_off(std::string executor) {
     return this->executors[executor].get_turn_off();
 }
+
+const std::string &Executors::get_host_name(std::string executor) {
+    return this->executors[executor].get_host_name();
+}
+
+const std::string &Executors::get_executor_task(std::string task_name) {
+    return this->task_executor_map[task_name];
+} 

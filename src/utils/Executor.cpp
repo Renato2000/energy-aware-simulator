@@ -19,3 +19,7 @@ bool Executor::get_turn_off() {
 void Executor::set_turn_off(bool value) {
     this->turn_off = value;
 }
+
+const std::string &Executor::get_host_name() {
+    return this->host;
+}

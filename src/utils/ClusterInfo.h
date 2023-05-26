@@ -34,6 +34,7 @@ class ClusterInfo {
         long get_algorithm_time();
         void add_algorithm_time(long time);
         float get_blevel(std::string task);
+        int get_available_cores(std::string host);
 
     private:
         long alg_time;

@@ -30,11 +30,18 @@ void ClusterInfo::run_task(std::string task, std::string executor) {
     this->remaining_tasks -= 1;
     this->dag->complete_task(task);
     this->executors->run_task(task, executor);
+    
+    this->executors->get_host_name(executor);
+    this->hosts->free_core(host);
 }
 
 void ClusterInfo::complete_task(std::string task) {
     //this->dag->complete_task(task);
     this->executors->complete_task(task);
+
+    const std::string &executor = this->executor->get_executor_task(task);
+    this->executors->get_host_name(executor);
+    this->hosts->free_core(host);
 }
 
 float ClusterInfo::get_start_time(std::string task) {
@@ -71,4 +78,8 @@ long ClusterInfo::get_algorithm_time() {
 
 float ClusterInfo::get_blevel(std::string task) {
     return this->dag->get_blevel(task);
+}
+
+int ClusterInfo::get_available_cores(std::string host) {
+    return this->hosts->get_available_cores(host);
 }

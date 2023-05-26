@@ -18,6 +18,7 @@ class Executor {
         void set_turn_off(bool value);
         void place_task(std::string task);
         void conclude_task(std::string task);
+        const std::string &get_host_name();
 
     private:
         const std::string host;
