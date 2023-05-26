@@ -19,7 +19,7 @@ class Executors {
         void set_turn_off(std::string executor, bool value);
         bool get_turn_off(std::string executor);
         const std::string &get_host_name(std::string executor);
-        const std::string &Executors::get_executor_task(std::string task_name);
+        const std::string &get_executor_task(std::string task_name);
 
     private:
         std::map<std::string, std::string> task_executor_map;
