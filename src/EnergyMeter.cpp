@@ -126,7 +126,7 @@ void EnergyMeter::computePowerMeasurements(const std::string &hostname,
     else if (used_cores == 11) consumption += 70;
     else if (used_cores == 12) consumption += 71;
 
-    this->simulation->getOutput().addTimestampEnergyConsumption(hostname, consumption);
+    this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter" + "__" + hostname, consumption);
 }
 
 /**
@@ -135,7 +135,7 @@ void EnergyMeter::computePowerMeasurements(const std::string &hostname,
  *
  * @throw std::runtime_error
  */
-bool PowerMeter::processNextMessage(double timeout) {
+bool EnergyMeter::processNextMessage(double timeout) {
     std::shared_ptr<wrench::SimulationMessage> message = nullptr;
 
     try {

@@ -29,7 +29,9 @@ WRENCH_LOG_CATEGORY(greedy_wms, "Log category for GreedyWMS");
 GreedyWMS::GreedyWMS(std::unique_ptr<wrench::StandardJobScheduler> standard_job_scheduler,
                      const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
                      const std::set<std::shared_ptr<wrench::StorageService>> &storage_services,
-                     const std::string &hostname) : WMS(std::move(standard_job_scheduler),
+                     const std::string &hostname,
+                     std::shared_ptr<ClusterInfo> cluster_info) : 
+                        cluster_info(cluster_info), WMS(std::move(standard_job_scheduler),
                                                         nullptr,
                                                         compute_services,
                                                         storage_services,
@@ -59,6 +61,7 @@ int GreedyWMS::main() {
 
     // start the power meters
     auto cloud_service = std::dynamic_pointer_cast<wrench::CloudComputeService>(*compute_services.begin());
+    /*
     // traditional power meter
     auto traditional_power_meter = std::make_shared<PowerMeter>(this, cloud_service->getExecutionHosts(), 1.0, true,
                                                                 false);
@@ -74,6 +77,11 @@ int GreedyWMS::main() {
                                                              false);
     unpaired_power_meter->simulation = this->simulation;
     unpaired_power_meter->start(unpaired_power_meter, true, true); // Always daemonize
+    */
+
+    auto energy_meter = std::make_shared<EnergyMeter>(this, cloud_service->getExecutionHosts(), this->cluster_info, 1.0);
+    energy_meter->simulation = this->simulation;
+    energy_meter->start(energy_meter, true, true); // Always daemonize
 
     // turn off workers
     for (auto &host : cloud_service->getExecutionHosts()) {

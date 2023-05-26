@@ -24,7 +24,8 @@ public:
     GreedyWMS(std::unique_ptr<wrench::StandardJobScheduler> standard_job_scheduler,
               const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
               const std::set<std::shared_ptr<wrench::StorageService>> &storage_services,
-              const std::string &hostname);
+              const std::string &hostname,
+              std::shared_ptr<ClusterInfo> cluster_info);
 
     // Overridden method
     void processEventStandardJobCompletion(std::shared_ptr<wrench::StandardJobCompletedEvent>) override;
@@ -32,6 +33,8 @@ public:
     void processEventStandardJobFailure(std::shared_ptr<wrench::StandardJobFailedEvent>) override;
 
 private:
+    std::shared_ptr<ClusterInfo> cluster_info;
+
     // main() method of the WMS
     int main() override;
 };
