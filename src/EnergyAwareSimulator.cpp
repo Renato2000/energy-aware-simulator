@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
     auto wms = simulation.add(
             new GreedyWMS(std::make_unique<EnergyAwareStandardJobScheduler>(
                     storage_service, std::move(scheduling_algorithm), cluster_info),
-                          compute_services, {storage_service}, wms_host));
+                          compute_services, {storage_service}, wms_host, cluster_info));
 
     wms->addWorkflow(workflow);
 
@@ -189,7 +189,7 @@ int main(int argc, char **argv) {
         total_traditional_energy += workers_traditional_power.at(host);
         total_pairwise_energy += workers_pairwise_power.at(host);
         total_unpaired_energy += workers_unpaired_power.at(host);
-        total_energy_meter += workers_total_energy_meter.at(host);
+        total_energy_meter += workers_energy_meter.at(host);
     }
     std::cerr << "Workflow Makespan (s): " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     //std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
