@@ -39,7 +39,7 @@ void ClusterInfo::complete_task(std::string task) {
     //this->dag->complete_task(task);
     this->executors->complete_task(task);
 
-    const std::string &executor = this->executor->get_executor_task(task);
+    const std::string &executor = this->executors->get_executor_task(task);
     std::string host_name = this->executors->get_host_name(executor);
     this->hosts->free_core(host_name);
 }
