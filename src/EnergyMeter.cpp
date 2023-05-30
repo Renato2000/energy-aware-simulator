@@ -15,6 +15,7 @@ EnergyMeter::EnergyMeter(wrench::WMS *wms,
                        double measurement_period) :
         Service(wms->hostname, "energy_meter", "energy_meter"),
         wms(wms),
+        cluster_info(cluster_info),
         measurement_period(measurement_period) {
     // sanity checks
     if (hostnames.empty()) {
@@ -109,9 +110,14 @@ int EnergyMeter::main() {
 void EnergyMeter::computePowerMeasurements(const std::string &hostname,
                                           std::set<wrench::WorkflowTask *> &tasks) {
 
-    double consumption = wrench::S4U_Simulation::getMinPowerConsumption(hostname);
+    double consumption = 0.5; //wrench::S4U_Simulation::getMinPowerConsumption(hostname);
 
     int used_cores = cluster_info->get_host_cores(hostname) - cluster_info->get_available_cores(hostname);
+
+    //std::cout << "Total cores: " << cluster_info->get_host_cores(hostname) << std::endl;
+    //std::cout << "Available cores: " << cluster_info->get_available_cores(hostname) << std::endl;
+    //std::cout << "Used cores: " << used_cores << std::endl;
+
     if (used_cores == 1) consumption += 18;
     else if (used_cores == 2) consumption += 28;
     else if (used_cores == 3) consumption += 38;
@@ -126,6 +132,8 @@ void EnergyMeter::computePowerMeasurements(const std::string &hostname,
     else if (used_cores == 12) consumption += 71;
 
     this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter__" + hostname, consumption);
+
+    //std::cout << "Host: " << hostname << " is using " << used_cores << " cores and is consuming " << consumption << " watts of power" << std::endl;
 }
 
 /**

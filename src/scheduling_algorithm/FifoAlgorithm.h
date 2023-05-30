@@ -2,11 +2,13 @@
 #define ENERGY_AWARE_FIFOALGORITHM_H
 
 #include "SchedulingAlgorithm.h"
+#include "utils/ClusterInfo.h"
 
 class FifoAlgorithm : public SchedulingAlgorithm {
 public:
-    FifoAlgorithm(std::shared_ptr<wrench::CloudComputeService> &cloud_service,
-                     std::unique_ptr<CostModel> cost_model);
+    FifoAlgorithm(std::shared_ptr<ClusterInfo> cluster_info,
+                    std::shared_ptr<wrench::CloudComputeService> &cloud_service,
+                    std::unique_ptr<CostModel> cost_model);
 
     std::vector<wrench::WorkflowTask *> sortTasks(const std::vector<wrench::WorkflowTask *> &tasks) override;
 
@@ -15,6 +17,7 @@ public:
     void notifyVMShutdown(const std::string &vm_name, const std::string &vm_pm) override;
 
 protected:
+    std::shared_ptr<ClusterInfo> cluster_info;
     std::map<const wrench::WorkflowTask *, std::string> task_to_host_schedule;
 };
 

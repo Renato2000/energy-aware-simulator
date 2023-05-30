@@ -7,9 +7,10 @@ WRENCH_LOG_CATEGORY(fifo_algorithm, "Log category for FifoAlgorithm");
  * @param cloud_service
  * @param power_model
  */
-FifoAlgorithm::FifoAlgorithm(std::shared_ptr<wrench::CloudComputeService> &cloud_service,
-                                   std::unique_ptr<CostModel> cost_model)
-        : SchedulingAlgorithm(cloud_service, std::move(cost_model)) {
+FifoAlgorithm::FifoAlgorithm(std::shared_ptr<ClusterInfo> cluster_info,
+                                std::shared_ptr<wrench::CloudComputeService> &cloud_service,
+                                std::unique_ptr<CostModel> cost_model)
+        : SchedulingAlgorithm(cloud_service, std::move(cost_model)), cluster_info(cluster_info) {
 }
 
 /**
@@ -72,6 +73,8 @@ std::string FifoAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
     // start VM
     this->cloud_service->startVM(vm_name);
     auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
+
+    this->cluster_info->add_executor(vm_pm, vm_name);
 
     //std::cout << "[Scheduler] Start vm " << vm_name << " on host " << vm_pm << " with " << wrench::Simulation::getHostNumCores(vm_pm) << " cores at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
 

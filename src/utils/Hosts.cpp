@@ -24,6 +24,7 @@ Hosts::Hosts(const std::string platform_file) {
 
             if (id != "master" && id != "data_server") {
                 this->hosts[id] = std::stoi(core);
+                this->available_cores[id] = std::stoi(core);
             }
         }
     }

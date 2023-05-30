@@ -88,6 +88,7 @@ find_library(SIMGRID_LIBRARY NAMES simgrid)
 find_library(PUGIXML_LIBRARY NAMES pugixml)
 find_library(GTEST_LIBRARY NAMES gtest)
 
+set(CMAKE_CXX_FLAGS "-g")
 add_executable(wrench-energy-aware ${SOURCE_FILES})
 target_link_libraries(wrench-energy-aware ${WRENCH_LIBRARY} ${WRENCH_PEGASUS_LIBRARY} ${SIMGRID_LIBRARY} ${PUGIXML_LIBRARY})
 install(TARGETS wrench-energy-aware DESTINATION bin)

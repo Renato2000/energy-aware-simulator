@@ -157,6 +157,8 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
         this->cloud_service->startVM(vm_name);
         auto vm_pm = this->cloud_service->getVMPhysicalHostname(vm_name);
 
+        this->cluster_info->add_executor(vm_pm, vm_name);
+
         //std::cout << "[Scheduler] Start vm " << vm_name << " on host " << vm_pm << " with " << wrench::Simulation::getHostNumCores(vm_pm) << " cores at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
 
         if (this->vm_worker_map.find(vm_name) == this->vm_worker_map.end()) {

@@ -21,6 +21,10 @@ DAG::DAG(std::string file_name) {
         std::unique_ptr<Task> task = std::make_unique<Task>(Task(name, parents, runtime));
 
         this->tasks.insert(std::make_pair(name, std::move(task)));
+
+        for (auto &parent : parents) {
+            this->tasks[parent]->add_child(name);
+        }
  
         //std::cout << "Job name: " << name << std::endl;
         //std::cout << "Runtime " << runtime << std::endl;
@@ -98,12 +102,15 @@ float DAG::get_blevel(std::string task_name) {
     float max = 0;
 
     for (auto &child_name : task->get_childs()) {
+        //std::cout << child_name <<  " is child of " << task_name << std::endl;
         float child_cost = this->get_blevel(child_name);
         if (child_cost > max) max = child_cost;
     }
 
     float blevel = cost + max;
     task->set_blevel(blevel);
+
+//    std::cout << "blevel for task: " << task_name << " is: " << blevel << std::endl; 
 
     return blevel;
 }

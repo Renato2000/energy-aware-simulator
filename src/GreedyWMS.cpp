@@ -30,14 +30,14 @@ GreedyWMS::GreedyWMS(std::unique_ptr<wrench::StandardJobScheduler> standard_job_
                      const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
                      const std::set<std::shared_ptr<wrench::StorageService>> &storage_services,
                      const std::string &hostname,
-                     std::shared_ptr<ClusterInfo> cluster_info) : 
-                        cluster_info(cluster_info), WMS(std::move(standard_job_scheduler),
+                     std::shared_ptr<ClusterInfo> cluster_info) : WMS(std::move(standard_job_scheduler),
                                                         nullptr,
                                                         compute_services,
                                                         storage_services,
                                                         {}, nullptr,
                                                         hostname,
-                                                        "greedy_wms") {}
+                                                        "greedy_wms"),
+                        cluster_info(cluster_info) {}
 
 /**
  * @brief main method of the GreedyWMS daemon
