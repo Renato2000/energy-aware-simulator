@@ -110,7 +110,27 @@ float DAG::get_blevel(std::string task_name) {
     float blevel = cost + max;
     task->set_blevel(blevel);
 
-//    std::cout << "blevel for task: " << task_name << " is: " << blevel << std::endl; 
-
     return blevel;
+}
+
+float DAG::get_task_score(std::string task_name) {
+    float score = 0;
+    float num_dependencies = 0;
+
+    std::unique_ptr<Task> &task = this->tasks[task_name];
+
+    for (auto &t : task.get()->get_childs()) {
+        std::unique_ptr<Task> &child = this->tasks[t];
+        num_dependencies += child->get_number_dependencies() - 1;
+    }
+
+    num_dependencies = task.get()->get_childs().size() == 0 ? 0 : num_dependencies / task.get()->get_childs().size();
+    score = task.get()->get_childs().size() - num_dependencies;
+    
+    //std::cout << "---------------------------------------------" << std::endl;
+    //std::cout << "Score for task: " << task_name << " is: " << score << std::endl;
+    //std::cout << "Num childs: " << task.get()->get_childs().size() << std::endl;
+    //std::cout << "Num dependencies: " << num_dependencies << std::endl;
+
+    return score;
 }

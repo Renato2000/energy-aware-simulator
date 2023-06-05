@@ -89,3 +89,14 @@ void ClusterInfo::add_executor(std::string host, std::string executor) {
     this->executors->add_executor(host, executor);
 }
 
+void ClusterInfo::add_energy(float energy) {
+    this->total_energy += energy;   
+}
+
+float ClusterInfo::get_total_energy() {
+    return this->total_energy;
+}
+
+float ClusterInfo::get_task_score(std::string task) {
+    return this->dag->get_task_score(task);
+}

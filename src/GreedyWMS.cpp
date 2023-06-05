@@ -61,7 +61,8 @@ int GreedyWMS::main() {
 
     // start the power meters
     auto cloud_service = std::dynamic_pointer_cast<wrench::CloudComputeService>(*compute_services.begin());
-    /*
+
+/*
     // traditional power meter
     auto traditional_power_meter = std::make_shared<PowerMeter>(this, cloud_service->getExecutionHosts(), 1.0, true,
                                                                 false);
@@ -77,7 +78,7 @@ int GreedyWMS::main() {
                                                              false);
     unpaired_power_meter->simulation = this->simulation;
     unpaired_power_meter->start(unpaired_power_meter, true, true); // Always daemonize
-    */
+*/
 
     auto energy_meter = std::make_shared<EnergyMeter>(this, cloud_service->getExecutionHosts(), this->cluster_info, 1.0);
     energy_meter->simulation = this->simulation;

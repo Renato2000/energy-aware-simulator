@@ -10,8 +10,6 @@ Hosts::Hosts(const std::string platform_file) {
 
     if (result)
     {
-        std::cout << "XML file parsed successfully." << std::endl;
-
         // get the root node
         pugi::xml_node platform = doc.child("platform");
 

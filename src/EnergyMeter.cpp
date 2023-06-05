@@ -78,6 +78,7 @@ int EnergyMeter::main() {
                 }
             }
 
+  //          std::cout << "New round" << std::endl;
             // compute power consumption
             for (auto &key_value : tasks_per_host) {
                 this->computePowerMeasurements(key_value.first, key_value.second);
@@ -131,9 +132,11 @@ void EnergyMeter::computePowerMeasurements(const std::string &hostname,
     else if (used_cores == 11) consumption += 70;
     else if (used_cores == 12) consumption += 71;
 
-    this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter__" + hostname, consumption);
+    this->cluster_info->add_energy(consumption);
+    // this->simulation->getOutput().addTimestampEnergyConsumption("energy_meter__" + hostname, consumption);
 
     //std::cout << "Host: " << hostname << " is using " << used_cores << " cores and is consuming " << consumption << " watts of power" << std::endl;
+//    std::cout << hostname << " " << consumption << std::endl;
 }
 
 /**

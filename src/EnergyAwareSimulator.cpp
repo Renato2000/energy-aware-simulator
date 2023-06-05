@@ -38,6 +38,12 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
+    std::string algorithm_name = "fifo";
+    for (int i = 0; i < argc; i++) {
+        if (not strcmp(argv[i], "--alg-ea")) algorithm_name = "ea";
+
+    }
+
     //create the platform file and dax file from command line args
     char *platform_file = argv[1];
     char *workflow_file = argv[2];
@@ -83,14 +89,27 @@ int main(int argc, char **argv) {
             new wrench::SimpleStorageService(storage_host, {"/"}));
 
     // scheduling algorithm
+    std::unique_ptr<SchedulingAlgorithm> scheduling_algorithm;
+    if (algorithm_name == "ea") {
+        scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
+            cloud_service,
+            std::make_unique<TraditionalPowerModel>(cloud_service));
+    }
+    else {
+        scheduling_algorithm = std::make_unique<FifoAlgorithm>(cluster_info,
+            cloud_service,
+            std::make_unique<TraditionalPowerModel>(cloud_service));
+
+    }
+
 //    auto scheduling_algorithm = std::make_unique<SPSSEBAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<IOAwareBalanceAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<EnRealAlgorithm>(
 //    auto scheduling_algorithm = std::make_unique<FifoAlgorithm>(cluster_info,
-    auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
-            cloud_service,
-            std::make_unique<TraditionalPowerModel>(cloud_service));
+//    auto scheduling_algorithm = std::make_unique<EnergyAwareAlgorithm>(cluster_info,
+//            cloud_service,
+//            std::make_unique<TraditionalPowerModel>(cloud_service));
 
     // instantiate the wms
     auto wms = simulation.add(
@@ -132,6 +151,7 @@ int main(int argc, char **argv) {
     // json output file
     simulation.getOutput().dumpUnifiedJSON(workflow, "tmp.json");
 
+/*
     // statistics
     auto power_trace = simulation.getOutput().getTrace<wrench::SimulationTimestampEnergyConsumption>();
     double previous_traditional_date = 0;
@@ -190,11 +210,13 @@ int main(int argc, char **argv) {
         total_unpaired_energy += workers_unpaired_power.at(host);
         total_energy_meter += workers_energy_meter.at(host);
     }
+*/
+
     std::cerr << "Workflow Makespan (s): " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     //std::cerr << "Total Traditional Energy (Wh): " << total_traditional_energy << std::endl;
     //std::cerr << "Total Pairwise Energy (Wh): " << total_pairwise_energy << std::endl;
     //std::cerr << "Total Unpaired Energy (Wh): " << total_unpaired_energy << std::endl;
-    std::cerr << "Total Energy by EnergyMeter (Wh): " << total_energy_meter << std::endl;
+    std::cerr << "Total Energy by EnergyMeter (Wh): " << cluster_info->get_total_energy() / 3600.0 << std::endl;
    
     double total_energy = 0;
     for (auto &host : hosts) {

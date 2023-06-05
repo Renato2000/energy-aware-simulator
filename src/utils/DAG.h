@@ -19,6 +19,7 @@ class DAG {
         void set_start_time(std::string task_name, float start_time);
         float get_start_time(std::string task_name);
         float get_blevel(std::string task_name);
+        float get_task_score(std::string task);
      
     private:
         std::map<std::string, std::unique_ptr<Task>> tasks;

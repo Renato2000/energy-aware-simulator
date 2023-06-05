@@ -13,6 +13,7 @@ class ClusterInfo {
     public:
         ClusterInfo(std::unique_ptr<DAG> &dag, std::unique_ptr<Executors> &executors, std::unique_ptr<Hosts> &hosts) :
             alg_time(0),
+            total_energy(0),
             dag(dag),
             executors(executors),
             hosts(hosts) {}
@@ -36,10 +37,14 @@ class ClusterInfo {
         float get_blevel(std::string task);
         int get_available_cores(std::string host);
         void add_executor(std::string host, std::string executor);
+        void add_energy(float energy);
+        float get_total_energy();
+        float get_task_score(std::string task);
 
     private:
         long alg_time;
         int remaining_tasks;
+        float total_energy;
         std::vector<wrench::WorkflowTask *> current_task_list;
         std::unique_ptr<DAG> &dag;
         std::unique_ptr<Executors> &executors;
