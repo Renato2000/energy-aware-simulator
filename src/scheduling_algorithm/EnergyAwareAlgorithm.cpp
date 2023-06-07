@@ -49,35 +49,6 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
                 }
             });
 
-/*
-    // sort by expected runtime
-    if (tasks.size() < num_cores) {
-        std::sort(sorted_tasks.begin(), sorted_tasks.end(),
-                [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
-                    if (cluster_info->is_priority(t1->getID()) && !cluster_info->is_priority(t2->getID())) {
-                        return true;
-                    } else if (cluster_info->is_priority(t2->getID()) && !cluster_info->is_priority(t1->getID())) {
-                        return false;
-                    } else if (cluster_info->predict_time(t1->getID()) == cluster_info->predict_time(t2->getID())) {
-                        return ((uintptr_t) t1 < (uintptr_t) t2);
-                    } else {
-                        return (cluster_info->predict_time(t1->getID()) > cluster_info->predict_time(t2->getID()));
-                    }
-                });
-
-    }
-    // sort using blevel 
-    else {
-        std::sort(sorted_tasks.begin(), sorted_tasks.end(),
-                [this](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
-                    if (cluster_info->get_blevel(t1->getID()) == cluster_info->get_blevel(t2->getID())) {
-                        return ((uintptr_t) t1 < (uintptr_t) t2);
-                    } else {
-                        return (cluster_info->get_blevel(t1->getID()) > cluster_info->get_blevel(t2->getID()));
-                    }
-                });
-    }
-*/
     return sorted_tasks;
 }
 
@@ -103,33 +74,26 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
         }
     }
 
-    if (idle_vms.size() > 0 && cluster_info->get_number_remaining_tasks() <= getTotalNumberCores(candidate_vms)) { 
-        if (getTotalNumberIdleCores(candidate_vms) == 0) {
-            //std::cout << "no cores available" << std::endl;
-            return "";
-        }
-        if (cluster_info->is_priority(task->getID())) {
-            //std::cout << "is priority" << std::endl;
-            return idle_vms[0];
-        }
+    std::string best_fit = "";
+    for (const auto &vm : idle_vms) {
+        if (cluster_info->get_number_remaining_tasks() <= getTotalNumberCores(candidate_vms)) {
+            if (cluster_info->is_priority(task->getID())) {
+                return vm;
+            }
 
-        std::string best_fit = getBestFit(task->getID(), candidate_vms);
-        if (isIdle(best_fit)) {
-            //std::cout << "best_fit is idle" << std::endl;
-            return best_fit;
+            if (best_fit == "") best_fit = getBestFit(task->getID(), candidate_vms);
+            if (isIdle(best_fit)) return best_fit; 
+
+            if (cluster_info->predict_time(task->getID()) <= calculateIdleTime(vm)) {
+                return vm;
+            }
         }
         else {
-            //std::cout << "best_fit not idle" << std::endl;
-            for (const auto &vm : idle_vms) {
-                if (cluster_info->predict_time(task->getID()) < calculateIdleTime(vm)) return vm;
-            }
-            return "";
+            return vm;
         }
     }
-    else if (idle_vms.size() > 0) {
-        return idle_vms[0];
-    }
-    else {
+
+    if (idle_vms.size() == 0) {
         std::string vm_name;
  
         // find idle vm
@@ -182,6 +146,8 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
 
         return vm_name;
     }
+
+    return "";
 }
 
 /**
