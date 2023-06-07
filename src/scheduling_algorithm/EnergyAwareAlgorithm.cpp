@@ -34,14 +34,14 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
  
     std::sort(sorted_tasks.begin(), sorted_tasks.end(), 
             [this, num_cores](const wrench::WorkflowTask *t1, const wrench::WorkflowTask *t2) -> bool {
-                if (cluster_info->is_priority(t1->getID()) && !cluster_info->is_priority(t2->getID())) {
-                    return true;
-                } else if (cluster_info->is_priority(t2->getID()) && !cluster_info->is_priority(t1->getID())) {
-                    return false;
-                //} else if (cluster_info->get_task_score(t1->getID()) > 1 && cluster_info->get_task_score(t2->getID()) <= 0) {
+                //if (cluster_info->is_priority(t1->getID()) && !cluster_info->is_priority(t2->getID())) {
                 //    return true;
-                //} else if (cluster_info->get_task_score(t2->getID()) > 1 && cluster_info->get_task_score(t1->getID()) <= 0) {
+                //} else if (cluster_info->is_priority(t2->getID()) && !cluster_info->is_priority(t1->getID())) {
                 //    return false;
+                if (cluster_info->get_task_score(t1->getID()) > 1 && cluster_info->get_task_score(t2->getID()) <= 0) {
+                    return true;
+                } else if (cluster_info->get_task_score(t2->getID()) > 1 && cluster_info->get_task_score(t1->getID()) <= 0) {
+                    return false;
                 } else if (cluster_info->predict_time(t1->getID()) == cluster_info->predict_time(t2->getID())) {
                     return ((uintptr_t) t1 < (uintptr_t) t2);
                 } else {
