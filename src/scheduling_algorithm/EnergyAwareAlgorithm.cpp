@@ -38,10 +38,10 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
                     return true;
                 } else if (cluster_info->is_priority(t2->getID()) && !cluster_info->is_priority(t1->getID())) {
                     return false;
-                } else if (cluster_info->get_task_score(t1->getID()) > 1 && cluster_info->get_task_score(t2->getID()) <= 0) {
-                    return true;
-                } else if (cluster_info->get_task_score(t2->getID()) > 1 && cluster_info->get_task_score(t1->getID()) <= 0) {
-                    return false;
+                //} else if (cluster_info->get_task_score(t1->getID()) > 1 && cluster_info->get_task_score(t2->getID()) <= 0) {
+                //    return true;
+                //} else if (cluster_info->get_task_score(t2->getID()) > 1 && cluster_info->get_task_score(t1->getID()) <= 0) {
+                //    return false;
                 } else if (cluster_info->predict_time(t1->getID()) == cluster_info->predict_time(t2->getID())) {
                     return ((uintptr_t) t1 < (uintptr_t) t2);
                 } else {
