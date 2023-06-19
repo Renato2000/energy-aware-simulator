@@ -115,7 +115,7 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         wrench::WorkflowTask *task) {
     
     this->cluster_info->complete_task(task->getID());
-    // std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
+    std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     if (this->unscheduled_tasks > 0) {
         this->unscheduled_tasks--;
     } 
@@ -127,8 +127,8 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         if (vm_cs->getTotalNumCores() == vm_cs->getTotalNumIdleCores()) {
 		    auto vm_pm = cloud_service->getVMPhysicalHostname(it->second);
 			// std::cout << "[Scheduler] Turn off vm " << vm_pm << " at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
-            cloud_service->shutdownVM(it->second);
-            this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
+            //cloud_service->shutdownVM(it->second);
+            //this->scheduling_algorithm->notifyVMShutdown(it->second, vm_pm);
 	    }
 	}
 	catch (wrench::WorkflowExecutionException &e) {

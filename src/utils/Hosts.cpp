@@ -57,3 +57,7 @@ void Hosts::free_core(std::string host) {
 int Hosts::get_available_cores(std::string host) {
     return this->available_cores[host];
 }
+
+int Hosts::get_idle_cores(std::string host) {
+    return this->hosts[host] - this->available_cores[host];
+}

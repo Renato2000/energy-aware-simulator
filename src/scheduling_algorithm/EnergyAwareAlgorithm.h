@@ -27,6 +27,7 @@ private:
     float calculateIdleTime(std::string vm);
     std::string getBestFit(std::string task, std::vector<std::string> candidate_vms);
     int getNumberIdleHosts();
+    int getNumIdleCores(std::string host);
     std::string getIdleHost();
     bool isIdle(std::string vm);
 };

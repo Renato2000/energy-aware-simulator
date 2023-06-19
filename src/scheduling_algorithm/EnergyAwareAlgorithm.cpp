@@ -49,6 +49,8 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
                 }
             });
 
+    std::cout << "--------------------------" << std::endl;
+
     return sorted_tasks;
 }
 
@@ -58,7 +60,9 @@ std::vector<wrench::WorkflowTask *> EnergyAwareAlgorithm::sortTasks(const vector
  * @return
  */
 std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task) {
-    
+   
+    std::cout << "Scheduling task: " << task->getID() << std::endl;
+ 
     // find candidate vms
     std::vector<std::string> candidate_vms;
     for (auto &it : this->vm_worker_map) {
@@ -73,22 +77,28 @@ std::string EnergyAwareAlgorithm::scheduleTask(const wrench::WorkflowTask *task)
             idle_vms.push_back(vm);
         }
     }
-
+    
     std::string best_fit = "";
     for (const auto &vm : idle_vms) {
         if (cluster_info->get_number_remaining_tasks() <= getTotalNumberCores(candidate_vms)) {
             if (cluster_info->is_priority(task->getID())) {
+                std::cout << "[Scheduler] Task: " << task->getID() << " is priority, using: " << vm << std::endl;
                 return vm;
             }
 
             if (best_fit == "") best_fit = getBestFit(task->getID(), candidate_vms);
-            if (isIdle(best_fit)) return best_fit; 
+            if (isIdle(best_fit)) {
+                std::cout << "[Scheduler] Task: " << task->getID() << " is using best fit: " << vm << std::endl;
+                return best_fit; 
+            } else std::cout << "Best fit not idle: " << vm << std::endl;
 
             if (cluster_info->predict_time(task->getID()) <= calculateIdleTime(vm)) {
+                std::cout << "[Scheduler] Task: " << task->getID() << " used vm with enough idle time: " << vm << std::endl;
                 return vm;
             }
         }
         else {
+            std::cout << "[Scheduler] Task: " << task->getID() << " used first idle vm: " << vm << std::endl;
             return vm;
         }
     }
@@ -187,6 +197,11 @@ int EnergyAwareAlgorithm::getTotalNumberIdleCores(std::vector<std::string> candi
     return num_cores;
 }
 
+int EnergyAwareAlgorithm::getNumIdleCores(std::string vm) {
+    std::string host_name = this->cloud_service->getVMPhysicalHostname(vm);
+    return this->cluster_info->get_idle_cores(host_name);   
+}
+
 float EnergyAwareAlgorithm::calculateIdleTime(std::string vm) {
     float highest = std::numeric_limits<float>::min();
     float lowest = std::numeric_limits<float>::max();
@@ -220,15 +235,20 @@ std::string EnergyAwareAlgorithm::getBestFit(std::string task, std::vector<std::
     std::string best_exec = "";
 
     for (const auto &vm : candidate_vms) {
-
+        
         float idle = this->calculateIdleTime(vm); 
         float distance = abs(cluster_info->predict_time(task) - idle);
-       
+
+        std::cout << "Idle time for task: " << task << " on vm: " <<  vm << " is: " << idle << std::endl;
+        std::cout << "Distance for task: " << task << " on vm: " <<  vm << " is: " << distance << std::endl;
+ 
         if (distance < best_time) {
             best_time = distance;
             best_exec = vm; 
         }
     }
+
+    std::cout << "Best exec is: " << best_exec << std::endl;
 
     return best_exec;
 }

@@ -13,6 +13,7 @@ class Hosts {
         void use_core(std::string host);
         void free_core(std::string host);
         int get_available_cores(std::string host);
+        int get_idle_cores(std::string host);
 
     private:
         std::map<std::string, int> hosts;
