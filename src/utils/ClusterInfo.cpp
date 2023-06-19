@@ -69,10 +69,6 @@ int ClusterInfo::get_host_cores(std::string host) {
     return this->hosts->get_host_cores(host);
 }
 
-int ClusterInfo::get_idle_cores(std::string host) {
-    return this->hosts->get_idle_cores(host);
-}
-
 void ClusterInfo::add_algorithm_time(long time) {
     this->alg_time += time;
 }

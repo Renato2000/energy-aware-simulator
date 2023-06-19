@@ -51,13 +51,9 @@ void Hosts::use_core(std::string host) {
 }
 
 void Hosts::free_core(std::string host) {
-    this->available_cores[host] += 1;
+    this->available_cores[host] += 1; 
 }
 
 int Hosts::get_available_cores(std::string host) {
     return this->available_cores[host];
-}
-
-int Hosts::get_idle_cores(std::string host) {
-    return this->hosts[host] - this->available_cores[host];
 }

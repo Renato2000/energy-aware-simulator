@@ -20,8 +20,6 @@ void Executor::set_turn_off(bool value) {
     this->turn_off = value;
 }
 
-#include <iostream>
-
 const std::string &Executor::get_host_name() {
     return this->host;
 }

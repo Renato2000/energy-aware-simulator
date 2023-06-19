@@ -114,8 +114,9 @@ void EnergyAwareStandardJobScheduler::notifyTaskCompletion(
         const std::set<std::shared_ptr<wrench::ComputeService>> &compute_services,
         wrench::WorkflowTask *task) {
     
+        
+    // std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     this->cluster_info->complete_task(task->getID());
-    std::cout << "[Scheduler] Task " << task->getID() << " ended at " << wrench::Simulation::getCurrentSimulatedDate() << std::endl;
     if (this->unscheduled_tasks > 0) {
         this->unscheduled_tasks--;
     } 
